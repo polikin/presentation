@@ -135,11 +135,17 @@ h1 {
 		background-color:	$div-bckg;
 		
 		@include borderbox();
+		@include transition(0.3s);
 	
 		&:nth-child(2n) { margin-right: 0; }
 		
-		&:hover { border:	8px black solid; };
-	
+		//&:hover { border:	8px black solid; };
+		
+		&.not { 
+			@include opacity(0.3);
+			@include transition-delay(0s);
+		}
+			
 		code { 
 			height:	20%;
 			

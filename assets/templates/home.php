@@ -72,4 +72,13 @@
 	
 </div>
 
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.examples div').hover(function(){
+			$('.examples div').toggleClass('not');
+			$(this).removeClass('not').toggleClass('hover');
+		});
+	});
+</script>
+
 <?php include 'inc.footer.php' ?>
