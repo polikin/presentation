@@ -153,6 +153,16 @@ h1 {
 			
 			@include borderbox();
 			@include center-absolute();
+			
+			&.hidden { @include opacity(0);}
+			
+			&.ouput {
+				font-size:	14px;
+				
+				@include opacity(0);
+				
+				&.hidden { @include opacity(1);}
+			}
 		}
 	}
 	
