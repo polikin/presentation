@@ -1,0 +1,693 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+/**
+* These styles are written and built with sass, compass mixins and susy framework. If you have any questions about how to use sass/compass or susy, please refer to those links:
+* http://sass-lang.com/tutorial.html || http://thesassway.com/
+* http://compass-style.org/help/
+* http://susy.oddbird.net/guides/reference/
+*
+* Preprocessor App for PC & MAC || Note: This project was compiled with Codekit
+*
+* Prepros || http://alphapixels.com/prepros/ || PC & MAC
+* Codekit || http://incident57.com/codekit/ || MAC only
+*
+* Contact Nicolas by email after reading the sass, compass and Susy docs if you still have issues.
+* Email: nic@locomotive.ca
+*/
+/*****************/
+/**	Core function
+* @tags: mixins
+* @file: compass mixins + _core.functions | http://compass-style.org/reference/compass/ | http://polikin.github.io/core/ 
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000317}}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000322}}
+html {
+  line-height: 1;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000324}}
+ol, ul {
+  list-style: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000326}}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000328}}
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000330}}
+q, blockquote {
+  quotes: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\00003103}}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000332}}
+a img {
+  border: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\00003116}}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/**
+* @tags:	core mixins library
+*/
+/*****************/
+/**
+* @tags: 	url path for background mixins
+* @usage: 	choose 3 different path. null by default, true = ../../../../charcoal/modules/admin/assets/images/, module = get-asset-images?a=
+* 			can be define into stylesheet or specefic class
+*/
+/*****************/
+/**
+* @file _core-functions.scss
+*
+* @author Nicolas Poliquin <nicolas@polikin.ca>
+* @version @Mon Jul  8 15:40:21 EDT 2013
+* @license (c) Polikin.ca 2013
+*/
+/*****************/
+/*  =========
+  MIXIN
+=========
+*/
+/**
+* @tags  : media queries
+* @mixin : @include media-query(value) { attribut }
+* @usage : .selector @include media-query(320px) { width: 60%; }; }
+*/
+/**
+* @tags  : position
+* @mixin : @include position();
+* @usage : .selector { @include position(absolute, 0, 0, 0, 0); }
+*/
+/**
+* @tags  : custom size
+* @mixin : @include size();
+* @usage : .selector { @include size(104, 104); }
+*/
+/*****************/
+/**
+* @tags  : backgroundimage
+* @for   : Load background image
+* @mixin : @include backgroundimage();
+* @usage : .selector { @include backgroundimage(bckg-btn-dwlmenu, png); }
+*/
+/*****************/
+/**
+* @tags    : image height
+* @for     : Grab the height of the image in your CSS
+* @library : Compass Image Helper || http://compass-style.org/reference/compass/helpers/urls/
+* @mixin   : @include image-height();
+* @usage   : .selector { @include image-height(img-name, png); }
+*/
+/*****************/
+/**
+* @tags    : image width
+* @for     : Grab the width of the image in your CSS
+* @library : Compass Image Helper || http://compass-style.org/reference/compass/helpers/urls/
+* @mixin   : @include image-width();
+* @usage   : .selector { @include image-width(img-name, png); }
+*/
+/*****************/
+/**
+* @tags    : image size
+* @for     : Grab the height/width of the image in your CSS
+* @library : Compass Image Helper || http://compass-style.org/reference/compass/helpers/urls/
+* @mixin   : @include image-size();
+* @usage   : .selector { @include image-size(img-name, png); }
+*/
+/*****************/
+/**
+* @tags    : center element horizontally in absolute position
+* @for     : Grab the height/width of the image and add a value to the margin-left (half of the width)
+* @library : Compass Image Helper || http://compass-style.org/reference/compass/helpers/urls/
+* @mixin   : @include center-absolute();
+* @usage   : .selector { @include center-absolute(img-name, png); }
+*/
+/*****************/
+/**
+* @tags  : prefix
+* @for   : add prefix to your attribut
+* @mixin : @include prefixer();
+* @usage : .selector { @include prefixer(attribut, value, webkit ms moz o spec); } || @include prefixer(background-size, 100%, webkit ms moz o spec);
+*/
+/*****************/
+/**
+* @tags  : prefix & suffix
+* @for   : add prefix to your attribut
+* @mixin : @include prefix-suffix();
+* @usage : .selector { @include prefix-suffix(attribut, value, webkit ms moz o spec); } || @include prefixer(background-size, 100%, webkit ms moz o spec);
+*/
+/*****************/
+/**
+* @tags  : suffix
+* @for   : add suffix to your attribut
+* @mixin : @include suffix();
+* @usage : .selector { @include suffix(attribut, value, webkit ms moz o spec); } || @include suffix(background-size, 100%, webkit ms moz o spec);
+*/
+/*****************/
+/**
+* @tags  : keyframes
+* @for   : add suffix to your keyframes animation
+* @mixin : @include keyframe(animationName, webkit moz o ms spec);
+* @usage : 
+* .selector { @include keyframes(block1-visible, webkit ms moz o spec) {
+*		from, 0% {  }
+*		to { }
+*	}
+*/
+@-webkit-keyframes opacityValue {}
+/*****************/
+/**
+* @tags  : debug
+* @for   : add red border to element
+* @mixin : @include debug();
+* @usage : .selector { @include debug(); }
+*/
+/*****************/
+/**
+* @tags  : include padding into the width & height of your element
+* @mixin : @include borderbox();
+* @usage : .selector { @include borderbox(); }
+*/
+/*****************/
+/**
+* @tags  : css3 transition delay
+* @mixin : @include delay();
+* @usage : .selector { @include delay(0.3s); }
+*/
+/*****************/
+/*  =========
+  FONT FACE
+=========
+*/
+/**
+* @tags  : grab every font-face file
+* @mixin : @include font-face();
+* @usage : .selector { @include font-face(font-custom-name, '../dir/font-file-name'); } | @include font-face(avenir, '../fonts/avenir-next-lt-pro');
+*/
+/**
+* @tags   : arrow
+* @format : .selector(@include arrow(10px, black, up);
+*/
+/**
+* @tags   : ie js breakpoint fix
+* @format : .selector(@mixin ie-grid(width:60%;));
+*/
+/*****************/
+/**
+* @tags   : css3 circle
+* @extend : pager button
+* @format : 
+* @include circle(width value, height value, background-color);
+*/
+/**
+* @tags   : add any properties in placeholder
+* @format : @include placeholder-color() {your properties}
+* @usage  : @include placeholder-color($color: red);
+*/
+/**
+* @tags   : add any properties in placeholder
+* @format : @include placeholder-content() {your properties}
+* @usage  : @include placeholder-content() { color: yellow; }
+*/
+/*****************/
+/**
+* @tags   : css ellipsis
+* @extend : pager button
+* @format : 
+* <div class="pager"></div>
+*/
+/*****************/
+/**
+* @tags:	css3 easing animation library || https://github.com/jhardy/compass-ceaser-easing
+*/
+/*****************/
+/**
+* @tags:	css3 animation library || https://github.com/adamstac/animate.sass
+*/
+/*****************/
+/**
+* @tags:	susy compass grid || (http://susy.oddbird.net/
+*/
+/*****************/
+/**
+* @tags: project colors || primary, secondary, tertiaire
+*/
+/**
+* @tags: main colors | primary = green | secondary = blue | tertiaire = grey
+* @file: screen.scss
+* @reference: http://flatuicolors.com/
+*/
+/* turquoise */
+/* emerald */
+/* peter river */
+/* midnight blue */
+/*****************/
+/**
+* @tags: base colors
+* @file: screen.scss
+*/
+/*****************/
+/**
+* @tags: base component
+*/
+/**
+* @file _finncomfort-var.scss
+*
+* @copyright (c) Locomotive 2013
+* @author Nicolas Poliquin <nic@locomotive.ca>
+* @version @Tue Jun 25 15:42:30 EDT 2013
+* @license (c) Locomotive 2013
+*/
+/*****************/
+/**	@Formatting
+* Hyphen separated class names || .selector-name
+* Inline style for one property || .selector { color: black; }
+*
+* Tabs between property and value | One selector per line
+* @format:
+* .selector {
+*	margin:		0;
+*	padding:	0;
+* 	color:		black;
+* }
+* 
+* More than two selector attribut || font, margin , padding, border, background, overflow
+* @format:
+*	margin: {
+* 		top: 	10px;
+*		bottom: 10px;	
+*	}
+* 
+* Declaration Order
+* @position || absolute, z-index, top, left
+* @display & box model || block, overflow, width, height, padding, margin
+* @other || background, color, font, text-align
+* @mixin
+*
+* @format:
+* .selector {
+* position:	absolute;
+* z-index:		100;
+* 	
+* display:	block;
+* width: 	100px;
+* height:	100px;
+* 
+* background:	red;
+* color:		black;
+* font-size:	16px;
+*	
+* }
+*/
+/*****************/
+/*  =========
+  MIXIN
+=========
+*/
+/**	
+* Base Styles
+* @file: screen.scss 
+* @format: @include base();
+*/
+/*****************/
+/*****************/
+/*  =========
+  FONTS
+=========
+*/
+/**	Fonts
+* @tags: font-face
+*/
+/*****************/
+/**
+* @tags: project styles
+*/
+/**
+* @file _sass-screen.scss
+*
+* @copyright (c) Locomotive 2013
+* @author Nicolas Poliquin <nic@locomotive.ca>
+* @version @Wed Oct  2 09:38:50 EDT 2013
+*/
+/*****************/
+/**	@Formatting
+* Hyphen separated class names || .selector-name
+* Inline style for one property || .selector { color: black; }
+*
+* Tabs between property and value | One selector per line
+* @format:
+* .selector {
+*	margin:		0;
+*	padding:	0;
+* 	color:		black;
+* }
+* 
+* More than two selector attribut || font, margin , padding, border, background, overflow
+* @format:
+*	margin: {
+* 		top: 	10px;
+*		bottom: 10px;	
+*	}
+* 
+* Declaration Order
+* @position || absolute, z-index, top, left
+* @display & box model || block, overflow, width, height, padding, margin
+* @other || background, color, font, text-align
+* @mixin
+*
+* @format:
+* .selector {
+* position:	absolute;
+* z-index:		100;
+* 	
+* display:	block;
+* width: 	100px;
+* height:	100px;
+* 
+* background:	red;
+* color:		black;
+* font-size:	16px;
+*	
+* }
+*/
+/*****************/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-var\.scss}line{font-family:\0000372}}
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-var\.scss}line{font-family:\0000379}}
+html {
+  -webkit-text-size-adjust: none;
+  /* Prevent font scaling in landscape */
+  -webkit-overflow-scrolling: touch;
+  /* enables momentum scrolling */
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-var\.scss}line{font-family:\0000384}}
+body {
+  line-height: normal;
+  padding: 0;
+  margin: 0;
+  display: inherit !important;
+  background: white;
+  -moz-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-var\.scss}line{font-family:\0000398}}
+input,
+textarea {
+  resize: none;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  padding: 10px;
+  border: none;
+  background: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-var\.scss}line{font-family:\00003108}}
+option {
+  -webkit-appearance: menulist-button;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-var\.scss}line{font-family:\00003110}}
+table {
+  border: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-var\.scss}line{font-family:\00003115}}
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-var\.scss}line{font-family:\00003119}}
+ul li b, ul li strong {
+  color: #000;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-var\.scss}line{font-family:\00003130}}
+.cf:after {
+  clear: both;
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-var\.scss}line{font-family:\00003139}}
+.float-left {
+  float: left;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-var\.scss}line{font-family:\00003141}}
+.float-right {
+  float: right;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-var\.scss}line{font-family:\00003143}}
+img {
+  max-width: 100%;
+  display: block;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-var\.scss}line{font-family:\00003150}}
+.columns,
+input,
+textarea {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-var\.scss}line{font-family:\00003156}}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-var\.scss}line{font-family:\00003158}}
+.unknown-width {
+  position: relative;
+  left: 50%;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-var\.scss}line{font-family:\00003163}}
+.unknown-width div {
+  position: relative;
+  left: -50%;
+  float: left;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-var\.scss}line{font-family:\00003170}}
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-var\.scss}line{font-family:\00003179}}
+.clear-left {
+  clear: left;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-screen\.scss}line{font-family:\0000357}}
+body,
+html {
+  height: 100%;
+  font-size: 13px;
+  background: #F9F9F9;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-screen\.scss}line{font-family:\0000366}}
+.container {
+  margin: 0 auto;
+  height: auto;
+  width: 830px;
+  float: none;
+  background: none;
+}
+
+/**
+* @tags: div var
+*/
+/*****************/
+/**
+* @tags: placeholder
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-screen\.scss}line{font-family:\0000392}}
+.examples .extend, .examples .extend2, .examples .extend3 {
+  border-bottom: 10px blue solid;
+}
+
+/*****************/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-screen\.scss}line{font-family:\0000398}}
+h1 {
+  margin: 40px 0;
+  font-size: 80px;
+  font-weight: 700;
+  text-align: center;
+  color: #2c3e50;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-screen\.scss}line{font-family:\00003109}}
+h1 span {
+  display: block;
+  font-size: 20px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-screen\.scss}line{font-family:\00003117}}
+.examples div {
+  position: relative;
+  margin: 0 20px 20px 0;
+  width: 400px;
+  height: 200px;
+  text-align: center;
+  float: left;
+  font-size: 16px;
+  font-family: monaco;
+  color: white;
+  background-color: #1abc9c;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-screen\.scss}line{font-family:\00003139}}
+.examples div:nth-child(2n) {
+  margin-right: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-screen\.scss}line{font-family:\00003141}}
+.examples div:hover {
+  border: 8px black solid;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-screen\.scss}line{font-family:\00003143}}
+.examples div code {
+  height: 20%;
+  padding: 0 20px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  position: absolute;
+  /* @if div height is know */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/libs\/src\/_core-functions\.scss}line{font-family:\00003340}}
+.ie7 .examples div code {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -/2;
+  z-index: 9999;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-screen\.scss}line{font-family:\00003154}}
+.examples .border-radius {
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  border-radius: 50px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-screen\.scss}line{font-family:\00003158}}
+.examples .border-bottom-right-radius {
+  -moz-border-radius-bottomright: 30px;
+  -webkit-border-bottom-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-screen\.scss}line{font-family:\00003162}}
+.examples .transition {
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-screen\.scss}line{font-family:\00003165}}
+.examples .transition:hover {
+  background: #3498db;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-screen\.scss}line{font-family:\00003168}}
+.examples .transition-delay {
+  -webkit-transition-delay: 1s;
+  -moz-transition-delay: 1s;
+  -o-transition-delay: 1s;
+  transition-delay: 1s;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-screen\.scss}line{font-family:\00003172}}
+.examples .box-shadow {
+  -webkit-box-shadow: #2c3e50 2px 2px 10px;
+  -moz-box-shadow: #2c3e50 2px 2px 10px;
+  box-shadow: #2c3e50 2px 2px 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-screen\.scss}line{font-family:\00003176}}
+.examples .opacity {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-screen\.scss}line{font-family:\00003192}}
+.examples .image {
+  background: url('../images/loop.svg?1380732841') top left no-repeat #1abc9c;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/libs\/src\/_core-functions\.scss}line{font-family:\00003111}}
+.no-svg .examples .image {
+  background: url('../images/loop.png?1380733939') top left no-repeat #1abc9c;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-screen\.scss}line{font-family:\00003196}}
+.examples .primary {
+  background: #1abc9c;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-screen\.scss}line{font-family:\00003198}}
+.examples .secondary {
+  background: #8e44ad;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-screen\.scss}line{font-family:\00003200}}
+.examples .tertiaire {
+  background: #3498db;
+}
+
+/*****************/

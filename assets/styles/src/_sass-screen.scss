@@ -1,0 +1,202 @@
+/**
+* @file _sass-screen.scss
+*
+* @copyright (c) Locomotive 2013
+* @author Nicolas Poliquin <nic@locomotive.ca>
+* @version @Wed Oct  2 09:38:50 EDT 2013
+*/
+
+/*****************/
+
+/**	@Formatting
+* Hyphen separated class names || .selector-name
+* Inline style for one property || .selector { color: black; }
+*
+* Tabs between property and value | One selector per line
+* @format:
+* .selector {
+*	margin:		0;
+*	padding:	0;
+* 	color:		black;
+* }
+* 
+* More than two selector attribut || font, margin , padding, border, background, overflow
+* @format:
+*	margin: {
+* 		top: 	10px;
+*		bottom: 10px;	
+*	}
+* 
+* Declaration Order
+* @position || absolute, z-index, top, left
+* @display & box model || block, overflow, width, height, padding, margin
+* @other || background, color, font, text-align
+* @mixin
+*
+* @format:
+* .selector {
+* position:	absolute;
+* z-index:		100;
+* 	
+* display:	block;
+* width: 	100px;
+* height:	100px;
+* 
+* background:	red;
+* color:		black;
+* font-size:	16px;
+*	
+* }
+*/
+
+/*****************/
+
+@include base();
+
+body,
+html { 
+	height: 	100%;
+	
+	font-size:	13px;
+	
+	background:	#F9F9F9;
+
+}
+
+.container {
+	margin:	0 auto;
+	
+	height:	auto;
+	width:	830px;
+	
+	float:	none;
+	
+	background:	none;
+}
+
+/**
+* @tags: div var
+*/
+
+$div-width  : 400px;
+$div-height : 200px;
+$div-bckg   : $primary;
+
+
+/*****************/
+
+/**
+* @tags: placeholder
+*/
+
+%placeholder {
+	border-bottom: 10px blue solid; 	
+}
+
+/*****************/
+
+h1 {
+	margin:	40px 0;
+	
+	font: {
+		size   : 80px;
+		weight : 700;
+	};
+	
+	text-align : center;
+	color      : $shadow;
+	
+	span { 
+		display:	block;
+		
+		font-size: 20px; 
+	}
+}
+
+.examples {
+	div {
+		position:	relative;
+	
+		margin  : 0 20px 20px 0;
+	
+		width  : $div-width;
+		height : $div-height;
+	
+		text-align : center;
+		float      : left;
+	
+		font: {
+			size   : 16px;
+			family : monaco;
+		};
+		
+		color:	$white;
+	
+		background-color:	$div-bckg;
+		
+		@include borderbox();
+	
+		&:nth-child(2n) { margin-right: 0; }
+		
+		&:hover { border:	8px black solid; };
+	
+		code { 
+			height:	20%;
+			
+			padding : 0 20px;
+			
+			@include borderbox();
+			@include center-absolute();
+		}
+	}
+	
+
+	.border-radius {
+		@include border-radius(50px);
+	}
+
+	.border-bottom-right-radius {
+		@include border-bottom-right-radius(30px);
+	}
+
+	.transition {
+		@include transition(0.3s);
+	
+		&:hover { background: $tertiaire; };
+	}
+
+	.transition-delay { 
+		@include transition-delay(1s); 
+	}
+
+	.box-shadow {
+		@include box-shadow($shadow 2px 2px 10px);
+	}
+
+	.opacity {
+		@include opacity(0.6);
+	}
+
+	.extend {
+		@extend %placeholder;
+	}
+
+	.extend2 {
+		@extend %placeholder;
+	}
+
+	.extend3 {
+		@extend %placeholder;
+	}
+
+	.image {
+		@include backgroundimage(loop, svg, $bgcolor: $primary);
+	}
+	
+	.primary { background: $primary; }
+	
+	.secondary { background: $secondary; }
+	
+	.tertiaire { background: $tertiaire; }
+}
+
