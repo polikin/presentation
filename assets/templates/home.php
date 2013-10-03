@@ -7,22 +7,25 @@
 		<span>http://compass-style.org/reference/compass/css3/</span>
 	</h1>
 	
-	<div class="examples">
+	<div class="examples cf">
 		<div class="primary">
 			<code>$primary</code>
+			<code class="output">#1abc9c</code>
 		</div>
 		
 		<div class="secondary">
 			<code>$secondary</code>
+			<code class="output">#8E44AD</code>
 		</div>
 		
 		<div class="tertiaire">
 			<code>$tertiaire</code>
+			<code class="output">#3498db</code>
 		</div>
 		
 		<div class="border-radius">
 			<code>@include border-radius(50px)</code>
-			<code class="ouput">
+			<code class="output">
 			    -webkit-border-radius: 50px;<br>
 			    -moz-border-radius: 50px;<br>
 			    border-radius: 50px;
@@ -31,7 +34,7 @@
 
 		<div class="border-bottom-right-radius">
 			<code>@include border-radius-bottom-right(30px)</code>
-			<code class="ouput">
+			<code class="output">
 			    -webkit-border-radius-bottomright: 30px;<br>
 			    -moz-border-radius-bottomright: 30px;<br>
 			    border-radius-bottomright: 30px;
@@ -40,7 +43,7 @@
 
 		<div class="transition">
 			<code>@include transitions(0.3s)</code>
-			<code class="ouput">
+			<code class="output">
 			    -webkit-transition: 0.3s;<br>
 			    -moz-transition: 0.3s;<br>
 			    transition: 0.3s;
@@ -49,7 +52,7 @@
 	
 		<div class="transition transition-delay">
 			<code>@include transitions-delay(1s)</code>
-			<code class="ouput">
+			<code class="output">
 			    -webkit-transition-delay: 1s;<br>
 			    -moz-transition-delay: 1s;<br>
 			    transition-delay: 1s;
@@ -58,7 +61,7 @@
 
 		<div class="box-shadow">
 			<code>@include box-shadow(10px)</code>
-			<code class="ouput">
+			<code class="output">
 			    -webkit-box-shadow: 10px;<br>
 			    -moz-box-shadow: 10px;<br>
 			    box-shadow: 10px;
@@ -67,7 +70,7 @@
 
 		<div class="opacity">
 			<code>@include opacity(0.6)</code>
-			<code class="ouput">
+			<code class="output">
 			    <span style="font-size:13px;">filter: progid:DXImageTransform.Microsoft.<br>Alpha(Opacity=60);</span><br>
 			    opacity: 0.6;
 			</code>
@@ -77,7 +80,7 @@
 			<code>
 				@extend %placeholder <br>{ border-bottom: 4px blue solid; }
 			</code>
-			<code class="ouput">
+			<code class="output">
 			    .examples .extend, <br>.examples .extend2, <br>.examples .extend3
 			</code>
 		</div>
@@ -86,7 +89,7 @@
 			<code>
 				@extend %placeholder <br>{ border-bottom: 4px blue solid; }
 			</code>
-			<code class="ouput">
+			<code class="output">
 			    .examples .extend, <br>.examples .extend2, <br>.examples .extend3
 			</code>
 		</div>
@@ -95,7 +98,7 @@
 			<code>
 				@extend %placeholder <br>{ border-bottom: 4px blue solid; }
 			</code>
-			<code class="ouput">
+			<code class="output">
 			    .examples .extend, <br>.examples .extend2, <br>.examples .extend3
 			</code>
 		</div>
@@ -104,11 +107,38 @@
 			<code>
 				@include background(image-url(loop.svg)
 			</code>
-			<code class="ouput">
+			<code class="output">
 			    background: <br>url('../images/loop.svg<span style="color:red;">?1380732841</span>') <br>top left no-repeat #1abc9c;
 			</code>
 		</div>
 		
+		<div class="image-resize">
+			<code>
+				height:	image-height("bckg1.jpg");<br>
+				width:	image-width("bckg1.jpg");
+			</code>
+			<code class="output">
+				<span class="width"></span>
+				<span class="height"></span>
+			</code>
+			<span class="bckg"></span>
+		</div>
+		
+	</div>
+	
+	<div class="examples-intermediaire">
+		<h2>@if</h2>
+		<div class="if"></div>	
+		
+		<h2>@for</h2>	
+		<div class="for">
+			<div class="for-1"></div>
+			<div class="for-2"></div>
+			<div class="for-3"></div>
+			<div class="for-4"></div>
+			<div class="for-5"></div>
+			<div class="for-6"></div>
+		</div>
 	</div>
 	
 </div>
@@ -120,6 +150,16 @@
 			$('code').removeClass('hidden');
 			$(this).removeClass('not').toggleClass('hover');
 		});
+		
+		/*****************/
+		
+		var bckg_width = $('.image-resize .bckg').width();
+		var bckg_height = $('.image-resize .bckg').height();
+		
+		$('.image-resize .width').html(bckg_width + 'px');
+		$('.image-resize .height').html(bckg_height + 'px');
+		
+		/*****************/
 		
 		$(document).on('click','.examples div', function(e){	
 		

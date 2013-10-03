@@ -569,7 +569,7 @@ html {
 .container {
   margin: 0 auto;
   height: auto;
-  width: 830px;
+  width: 1140px;
   float: none;
   background: none;
 }
@@ -583,24 +583,32 @@ html {
 */
 /*****************/
 /* line 98, src/_sass-screen.scss */
-h1 {
+h1, h2 {
   margin: 40px 0;
   font-size: 80px;
   font-weight: 700;
+  display: block;
   text-align: center;
   color: #2c3e50;
 }
-/* line 109, src/_sass-screen.scss */
-h1 span {
+/* line 110, src/_sass-screen.scss */
+h1 span, h2 span {
   display: block;
   font-size: 20px;
 }
 
 /* line 117, src/_sass-screen.scss */
+h2 {
+  margin-top: 40px;
+  margin-bottom: 0;
+  font-size: 40px;
+}
+
+/* line 127, src/_sass-screen.scss */
 .examples div {
   position: relative;
-  margin: 0 20px 20px 0;
-  width: 400px;
+  margin: 0 2% 20px 0;
+  width: 32%;
   height: 200px;
   text-align: center;
   float: left;
@@ -616,11 +624,11 @@ h1 span {
   -o-transition: 0.3s;
   transition: 0.3s;
 }
-/* line 140, src/_sass-screen.scss */
-.examples div:nth-child(2n) {
+/* line 150, src/_sass-screen.scss */
+.examples div:nth-child(3n) {
   margin-right: 0;
 }
-/* line 144, src/_sass-screen.scss */
+/* line 154, src/_sass-screen.scss */
 .examples div.not {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
   opacity: 0.3;
@@ -629,10 +637,17 @@ h1 span {
   -o-transition-delay: 0s;
   transition-delay: 0s;
 }
-/* line 149, src/_sass-screen.scss */
+/* line 159, src/_sass-screen.scss */
+.examples div.secondary {
+  background: #8e44ad;
+}
+/* line 161, src/_sass-screen.scss */
+.examples div.tertiaire {
+  background: #3498db;
+}
+/* line 163, src/_sass-screen.scss */
 .examples div code {
   height: 20%;
-  padding: 0 20px;
   color: black;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -657,7 +672,7 @@ h1 span {
   margin-left: -/2;
   z-index: 9999;
 }
-/* line 164, src/_sass-screen.scss */
+/* line 176, src/_sass-screen.scss */
 .examples div code.hidden {
   -webkit-transform: scale(0.5);
   -ms-transform: scale(0.5);
@@ -667,9 +682,9 @@ h1 span {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-/* line 169, src/_sass-screen.scss */
-.examples div code.ouput {
-  font-size: 16px;
+/* line 181, src/_sass-screen.scss */
+.examples div code.output {
+  font-size: 17px;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   -webkit-transform: scale(0.5);
@@ -678,8 +693,8 @@ h1 span {
   -o-transform: scale(0.5);
   transform: scale(0.5);
 }
-/* line 175, src/_sass-screen.scss */
-.examples div code.ouput.hidden {
+/* line 187, src/_sass-screen.scss */
+.examples div code.output.hidden {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   -moz-transform: scale(1);
