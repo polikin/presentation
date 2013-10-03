@@ -147,21 +147,35 @@ h1 {
 		}
 			
 		code { 
+			
+			@extend %backface;
+			@extend %preserve;
+			
 			height:	20%;
 			
 			padding : 0 20px;
 			
+			color:	$black;
+			
 			@include borderbox();
 			@include center-absolute();
+			@include transition(0.3s);
 			
-			&.hidden { @include opacity(0);}
+			&.hidden { 
+				@include prefixer(transform, scale(0.5));
+				@include opacity(0);
+			}
 			
 			&.ouput {
-				font-size:	14px;
+				font-size:	16px;
 				
 				@include opacity(0);
+				@include prefixer(transform, scale(0.5));
 				
-				&.hidden { @include opacity(1);}
+				&.hidden { 
+					@include prefixer(transform, scale(1));
+					@include opacity(1);
+				}
 			}
 		}
 	}

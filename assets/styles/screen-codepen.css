@@ -357,6 +357,28 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 */
 /*****************/
 /**
+* @tags: 3D transform
+*/
+/* line 206, src/_sass-var.scss */
+.examples div code {
+  -webkit-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* line 208, src/_sass-var.scss */
+.examples div code {
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+/*****************/
+/**
 * @tags: project styles
 */
 /**
@@ -611,6 +633,7 @@ h1 span {
 .examples div code {
   height: 20%;
   padding: 0 20px;
+  color: black;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -621,6 +644,10 @@ h1 span {
   bottom: 0;
   left: 0;
   margin: auto;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
 }
 /* line 340, src/libs/src/_core-functions.scss */
 .ie7 .examples div code {
@@ -630,19 +657,34 @@ h1 span {
   margin-left: -/2;
   z-index: 9999;
 }
-/* line 157, src/_sass-screen.scss */
-.examples div code.hidden {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
-}
-/* line 159, src/_sass-screen.scss */
-.examples div code.ouput {
-  font-size: 14px;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
-}
 /* line 164, src/_sass-screen.scss */
+.examples div code.hidden {
+  -webkit-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  -o-transform: scale(0.5);
+  transform: scale(0.5);
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+/* line 169, src/_sass-screen.scss */
+.examples div code.ouput {
+  font-size: 16px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  -o-transform: scale(0.5);
+  transform: scale(0.5);
+}
+/* line 175, src/_sass-screen.scss */
 .examples div code.ouput.hidden {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }

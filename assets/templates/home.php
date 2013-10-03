@@ -68,7 +68,7 @@
 		<div class="opacity">
 			<code>@include opacity(0.6)</code>
 			<code class="ouput">
-			    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);<br>
+			    <span style="font-size:13px;">filter: progid:DXImageTransform.Microsoft.<br>Alpha(Opacity=60);</span><br>
 			    opacity: 0.6;
 			</code>
 		</div>
@@ -105,7 +105,7 @@
 				@include background(image-url(loop.svg)
 			</code>
 			<code class="ouput">
-			    background: <br>url('../images/loop.svg?1380732841') <br>top left no-repeat #1abc9c;
+			    background: <br>url('../images/loop.svg<span style="color:red;">?1380732841</span>') <br>top left no-repeat #1abc9c;
 			</code>
 		</div>
 		

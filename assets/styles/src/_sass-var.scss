@@ -196,3 +196,15 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 $oxygen: 'Montserrat', sans-serif;
+
+/*****************/
+
+/**
+* @tags: 3D transform
+*/
+
+%backface { @include prefixer(backface-visibility, hidden);}
+
+%preserve { @include prefixer(transform-style, preserve-3d); }
+
+%perspective { @include prefixer(perspective, 500px); }
