@@ -851,7 +851,7 @@ h2 {
 /* line 132, src/_examples.scss */
 .if:before {
   color: #3498db;
-  content: "$if == false, donc ce contenu s'affiche";
+  content: "$if == false, ce contenu s'affiche";
 }
 
 /*****************/
