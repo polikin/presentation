@@ -165,54 +165,5 @@ h1 {
 			}
 		}
 	}
-	
-
-	.border-radius {
-		@include border-radius(50px);
-	}
-
-	.border-bottom-right-radius {
-		@include border-bottom-right-radius(30px);
-	}
-
-	.transition {
-		@include transition(0.3s);
-	
-		&:hover { background: $tertiaire; };
-	}
-
-	.transition-delay { 
-		@include transition-delay(1s); 
-	}
-
-	.box-shadow {
-		@include box-shadow($shadow 2px 2px 10px);
-	}
-
-	.opacity {
-		@include opacity(0.6);
-	}
-
-	.extend {
-		@extend %placeholder;
-	}
-
-	.extend2 {
-		@extend %placeholder;
-	}
-
-	.extend3 {
-		@extend %placeholder;
-	}
-
-	.image {
-		@include backgroundimage(loop, svg, $bgcolor: $primary);
-	}
-	
-	.primary { background: $primary; }
-	
-	.secondary { background: $secondary; }
-	
-	.tertiaire { background: $tertiaire; }
 }
 

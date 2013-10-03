@@ -559,11 +559,6 @@ html {
 /**
 * @tags: placeholder
 */
-/* line 92, src/_sass-screen.scss */
-.extend, .extend2, .extend3 {
-  border-bottom: 10px blue solid;
-}
-
 /*****************/
 /* line 98, src/_sass-screen.scss */
 h1 {
@@ -650,100 +645,6 @@ h1 span {
 .examples div code.ouput.hidden {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
-}
-
-/*****************/
-/**
-* @tags: examples
-*/
-/* line 5, src/_examples.scss */
-.border-radius {
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  -ms-border-radius: 50px;
-  -o-border-radius: 50px;
-  border-radius: 50px;
-}
-
-/* line 9, src/_examples.scss */
-.border-bottom-right-radius {
-  -moz-border-radius-bottomright: 30px;
-  -webkit-border-bottom-right-radius: 30px;
-  border-bottom-right-radius: 30px;
-}
-
-/* line 13, src/_examples.scss */
-.transition {
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
-}
-/* line 16, src/_examples.scss */
-.transition:hover {
-  background: #3498db;
-}
-
-/* line 19, src/_examples.scss */
-.transition-delay {
-  -webkit-transition-delay: 1s;
-  -moz-transition-delay: 1s;
-  -o-transition-delay: 1s;
-  transition-delay: 1s;
-}
-
-/* line 23, src/_examples.scss */
-.box-shadow {
-  -webkit-box-shadow: #2c3e50 2px 2px 10px;
-  -moz-box-shadow: #2c3e50 2px 2px 10px;
-  box-shadow: #2c3e50 2px 2px 10px;
-}
-
-/* line 27, src/_examples.scss */
-.opacity {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
-  opacity: 0.6;
-}
-
-/* line 43, src/_examples.scss */
-.image {
-  background: url('../images/loop.svg?1380732841') top left no-repeat #1abc9c;
-}
-/* line 111, src/libs/src/_core-functions.scss */
-.no-svg .image {
-  background: url('../images/loop.png?1380733939') top left no-repeat #1abc9c;
-}
-
-/* line 47, src/_examples.scss */
-.primary {
-  background: #1abc9c;
-}
-
-/* line 49, src/_examples.scss */
-.secondary {
-  background: #8e44ad;
-}
-
-/* line 51, src/_examples.scss */
-.tertiaire {
-  background: #3498db;
-}
-
-/*****************/
-/**
-* @tags: nesting
-*/
-/* line 59, src/_examples.scss */
-.ma-class {
-  background: #1abc9c;
-}
-/* line 63, src/_examples.scss */
-.ma-class .mon-div {
-  background: #8e44ad;
-}
-/* line 67, src/_examples.scss */
-.ma-class .mon-div .mon-span {
-  background: #3498db;
 }
 
 /*****************/
