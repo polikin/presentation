@@ -63,25 +63,34 @@
 			@include opacity(0); 
 			
 		}	
+		
+		.bckg { @include opacity(1);}
 	}
 	
 	&.not {
 		.bckg { @include opacity(0); }
 	}
 	
-	.output { color: red; }
+	.output { 
+		font-size:	32px !important;
+		color: red; 
+	}
 	
 	.bckg {
+		$bckg1: bckg1;
+		
 		position:	absolute;
 		
 		display:	block;
 		
-		height:	image-height("bckg1.jpg");
-		width:	image-width("bckg1.jpg");
+		height:	image-height("#{$bckg1}.jpg");
+		width:	image-width("#{$bckg1}.jpg");
 		
-		background:	image-url("bckg1.jpg");
+		background:	image-url("#{$bckg1}.jpg");
 		
 		z-index: -1;
+		
+		@include opacity(0);
 	}
 }
 

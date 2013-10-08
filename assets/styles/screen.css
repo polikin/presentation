@@ -801,38 +801,46 @@ h2 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-/* line 69, src/_examples.scss */
+/* line 67, src/_examples.scss */
+.image-resize.hover .bckg {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+/* line 71, src/_examples.scss */
 .image-resize.not .bckg {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-/* line 72, src/_examples.scss */
+/* line 74, src/_examples.scss */
 .image-resize .output {
+  font-size: 32px !important;
   color: red;
 }
-/* line 74, src/_examples.scss */
+/* line 79, src/_examples.scss */
 .image-resize .bckg {
   position: absolute;
   display: block;
   height: 183px;
   width: 365px;
-  background: url('../images/bckg1.jpg?1380821642');
+  background: url('../images/bckg1.jpg?1381265098');
   z-index: -1;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
 }
 
 /*****************/
 /**
 * @tags: nesting
 */
-/* line 94, src/_examples.scss */
+/* line 103, src/_examples.scss */
 .ma-class {
   background: #1abc9c;
 }
-/* line 98, src/_examples.scss */
+/* line 107, src/_examples.scss */
 .ma-class .mon-div {
   background: #8e44ad;
 }
-/* line 102, src/_examples.scss */
+/* line 111, src/_examples.scss */
 .ma-class .mon-div .mon-span {
   background: #3498db;
 }
@@ -841,14 +849,14 @@ h2 {
 /**
 * @tags: @if
 */
-/* line 117, src/_examples.scss */
+/* line 126, src/_examples.scss */
 .examples-intermediaire {
   margin: 0 0 40px 0;
   font-size: 40px;
   text-align: center;
 }
 
-/* line 132, src/_examples.scss */
+/* line 141, src/_examples.scss */
 .if:before {
   color: #3498db;
   content: "$if == false, ce contenu s'affiche";
@@ -858,7 +866,7 @@ h2 {
 /**
 * @tags: @for
 */
-/* line 149, src/_examples.scss */
+/* line 158, src/_examples.scss */
 .for .for-0 {
   width: 16.66667%;
   height: 0px;
@@ -869,11 +877,11 @@ h2 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
-/* line 160, src/_examples.scss */
+/* line 169, src/_examples.scss */
 .for .for-0:before {
   content: "0px";
 }
-/* line 149, src/_examples.scss */
+/* line 158, src/_examples.scss */
 .for .for-1 {
   width: 16.66667%;
   height: 20px;
@@ -884,11 +892,11 @@ h2 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
-/* line 160, src/_examples.scss */
+/* line 169, src/_examples.scss */
 .for .for-1:before {
   content: "20px";
 }
-/* line 149, src/_examples.scss */
+/* line 158, src/_examples.scss */
 .for .for-2 {
   width: 16.66667%;
   height: 40px;
@@ -899,11 +907,11 @@ h2 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
-/* line 160, src/_examples.scss */
+/* line 169, src/_examples.scss */
 .for .for-2:before {
   content: "40px";
 }
-/* line 149, src/_examples.scss */
+/* line 158, src/_examples.scss */
 .for .for-3 {
   width: 16.66667%;
   height: 60px;
@@ -914,11 +922,11 @@ h2 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
-/* line 160, src/_examples.scss */
+/* line 169, src/_examples.scss */
 .for .for-3:before {
   content: "60px";
 }
-/* line 149, src/_examples.scss */
+/* line 158, src/_examples.scss */
 .for .for-4 {
   width: 16.66667%;
   height: 80px;
@@ -929,11 +937,11 @@ h2 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
-/* line 160, src/_examples.scss */
+/* line 169, src/_examples.scss */
 .for .for-4:before {
   content: "80px";
 }
-/* line 149, src/_examples.scss */
+/* line 158, src/_examples.scss */
 .for .for-5 {
   width: 16.66667%;
   height: 100px;
@@ -944,11 +952,11 @@ h2 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
-/* line 160, src/_examples.scss */
+/* line 169, src/_examples.scss */
 .for .for-5:before {
   content: "100px";
 }
-/* line 149, src/_examples.scss */
+/* line 158, src/_examples.scss */
 .for .for-6 {
   width: 16.66667%;
   height: 120px;
@@ -959,7 +967,7 @@ h2 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
-/* line 160, src/_examples.scss */
+/* line 169, src/_examples.scss */
 .for .for-6:before {
   content: "120px";
 }
