@@ -21,10 +21,8 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1; maximum-scale=1; minimum-scale=1; user-scalable=no;"/>
 				
 		<link rel="stylesheet" type="text/css" href="assets/styles/screen.css" media="screen,projection" />
-	
+		
 		<script type="text/javascript" charset="utf-8" src="assets/scripts/jquery-1.10.2.min.js"></script>
-		
-		
 		
 	</head>	
 	<body>

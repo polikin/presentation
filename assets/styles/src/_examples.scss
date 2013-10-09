@@ -121,8 +121,6 @@
 */
 
 
-$if: false;
-
 .examples-intermediaire { 
 	margin: 0 0 40px 0; 
 	
@@ -132,6 +130,8 @@ $if: false;
 }
 
 .if {
+	$if: false;
+	
 	@if $if == true {
 		&:before { 
 			color:	$secondary;
@@ -151,9 +151,9 @@ $if: false;
 * @tags: @for
 */
 
-$width: 100%;
-
 .for {
+	$width: 100%;
+	
 	@for $i from 0 through 6 {
 		.for-#{$i} {
 			width  : $width/6;

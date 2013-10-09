@@ -128,9 +128,73 @@
 	
 	<div class="examples-intermediaire">
 		<h2>@if</h2>
+		
+		<pre class="brush: sass">
+			$if: false;
+			
+			.if {
+				@if $if == true {
+					&:before { 
+						color:	$secondary;
+						content: "$if == true, ce contenu s'affiche"; 
+					}
+				}@else {
+					&:before { 
+						color:	$tertiaire;
+						content: "$if == false, ce contenu s'affiche"; 
+					}
+				}
+			}
+		</pre>
+		
+		<br>
+		
 		<div class="if"></div>	
 		
 		<h2>@for</h2>	
+		
+		<h3>scss</h3>
+		
+		<pre class="brush: sass">
+			.for {
+				$width: 100%;
+				
+				@for $i from 0 through 6 {
+					.for-#{$i} {
+						width  : $width/6;
+						height : $i * 20#{px};
+
+						float:	left;
+
+						border     : 1px $white solid;
+						background : $secondary;
+
+						@include borderbox(); 
+
+						&:before {
+							content: "#{$i * 20}px";
+						}
+					}
+				}
+			}
+			
+		</pre>
+		
+		<h3>html</h3>
+		
+		<pre class="brush: php">
+			<div class="for">
+				<div class="for-1"></div>
+				<div class="for-2"></div>
+				<div class="for-3"></div>
+				<div class="for-4"></div>
+				<div class="for-5"></div>
+				<div class="for-6"></div>
+			</div>
+		</pre>
+		
+		<br>
+		
 		<div class="for">
 			<div class="for-1"></div>
 			<div class="for-2"></div>
