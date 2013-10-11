@@ -716,6 +716,24 @@ h3 {
   opacity: 1;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-screen\.scss}line{font-family:\00003203}}
+.credits {
+  margin: 90px 0 0 0;
+  font-size: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-screen\.scss}line{font-family:\00003208}}
+.credits a {
+  color: #8e44ad;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-screen\.scss}line{font-family:\00003210}}
+.credits ul {
+  margin: 30px 60px 0 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-screen\.scss}line{font-family:\00003213}}
+.credits ul li {
+  margin: 10px 0 0 0;
+}
+
 /*****************/
 /**
 * @tags: examples
@@ -977,6 +995,29 @@ h3 {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_examples\.scss}line{font-family:\00003169}}
 .for .for-6:before {
   content: "120px";
+}
+
+/*****************/
+/**
+* @tags: color manipulation
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_examples\.scss}line{font-family:\00003182}}
+.primary-lighten {
+  background: #aef4e6 !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_examples\.scss}line{font-family:\00003184}}
+.secondary-darken {
+  background: #160a1b !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_examples\.scss}line{font-family:\00003187}}
+.secondary-darken code {
+  color: white !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_examples\.scss}line{font-family:\00003190}}
+.tertiary-complement {
+  background: #db7734 !important;
 }
 
 /* !!!! BACKUP !!!! */

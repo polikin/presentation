@@ -165,7 +165,7 @@ h3 {
 		
 		&.secondary { background: $secondary;}
 		
-		&.tertiaire { background: $tertiaire;}
+		&.tertiaire { background: $tertiary;}
 			
 		code { 
 			
@@ -197,6 +197,20 @@ h3 {
 				}
 			}
 		}
+	}
+}
+
+.credits {
+	margin:	90px 0 0 0;
+	
+	font-size: 15px;
+	
+	a { color: $secondary;}
+	
+	ul {
+		margin:	30px 60px 0 0;
+		
+		li { margin: 10px 0 0 0;}
 	}
 }
 

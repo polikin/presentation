@@ -19,8 +19,23 @@
 		</div>
 		
 		<div class="tertiaire">
-			<code>$tertiaire</code>
+			<code>$tertiary</code>
 			<code class="output">#3498db</code>
+		</div>
+		
+		<div class="primary-lighten">
+			<code>background: lighten($primary, 40)</code>
+			<code class="output">#AEF4E6</code>
+		</div>
+		
+		<div class="secondary-darken">
+			<code>background: darken($secondary, 40)</code>
+			<code class="output">#160A1B</code>
+		</div>
+		
+		<div class="tertiary-complement">
+			<code>background: complement($tertiary)</code>
+			<code class="output">#DB7734</code>
 		</div>
 		
 		<div class="border-radius">
@@ -140,7 +155,7 @@
 					}
 				}@else {
 					&:before { 
-						color:	$tertiaire;
+						color:	$tertiary;
 						content: "$if == false, ce contenu s'affiche"; 
 					}
 				}
@@ -195,7 +210,7 @@
 		
 		<br>
 		
-		<div class="for">
+		<div class="for cf">
 			<div class="for-1"></div>
 			<div class="for-2"></div>
 			<div class="for-3"></div>
@@ -204,8 +219,44 @@
 			<div class="for-6"></div>
 		</div>
 	</div>
+
+	<div class="credits cf">
+		<h4>Auteurs: Nicolas Poliquin &amp; Mathieu Rivest</h4>
+		<ul class="float-left">
+			<li>Nicolas Poliquin</li>
+			<li>email: <a href="mailto:nic@polikin.ca?subject=Questions sur compass/sass">nic@polikin.ca</a></li>
+			<li>twitter: <a href="https://twitter.com/_polikin">@_polikin</a></li>
+			<li>github: <a href="https://github.com/polikin">https://github.com/polikin</a></li>
+			<li>blog: <a href="http://theresponsiveness.tumblr.com/">http://theresponsiveness.tumblr.com/</a></li>
+		</ul>
+		
+		<ul class="float-left">
+			<li>Mathieu Rivest</li>
+			<li>email: <a href="mailto:rivest.mathieu@gmail.com?subject=Questions sur compass/sass">rivest.mathieu@gmail.com</a></li>
+			<!-- <li>twitter: <a href="https://twitter.com/_polikin">@_polikin</a></li>
+			<li>github: <a href="https://github.com/polikin">https://github.com/polikin</a></li>
+			<li>blog: <a href="http://theresponsiveness.tumblr.com/">http://theresponsiveness.tumblr.com/</a></li> -->
+		</ul>
+
+		
+		<br class="clear">
+		<br><br>
+		
+		<h4>Crédits:</h4>
+		
+		<ul style="margin:0;">
+			<li><a href="http://compass-style.org/help/">Compass</a></li>
+			<li><a href="http://sass-lang.com/tutorial.html">Sass</a></li>
+			<li><a href="http://thesassway.com/">The Sass Way</a></li>
+			<li><a href="https://speakerdeck.com/imathis/sass-compass-the-future-of-stylesheets-now">https://speakerdeck.com/imathis/sass-compass-the-future-of-stylesheets-now - Brandon Mathis</a></li>
+			<li><a href="http://blog.humancoders.com/les-id-es-re-ues-sur-les-pr-processeurs-css-sass-53/">http://blog.humancoders.com/les-id-es-re-ues-sur-les-pr-processeurs-css-sass-53/ - Camille Roux</a></li>
+		</ul>
+		
+		
+	</div>
 	
 </div>
+
 
 <script type="text/javascript">
 	$(document).ready(function() {

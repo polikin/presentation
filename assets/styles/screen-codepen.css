@@ -711,4 +711,22 @@ h3 {
   opacity: 1;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-screen\.scss}line{font-family:\00003203}}
+.credits {
+  margin: 90px 0 0 0;
+  font-size: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-screen\.scss}line{font-family:\00003208}}
+.credits a {
+  color: #8e44ad;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-screen\.scss}line{font-family:\00003210}}
+.credits ul {
+  margin: 30px 60px 0 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Locomotive\/Documents\/projets\/polikin\/projects\/presentation\/branches\/sass-compass\/assets\/styles\/src\/_sass-screen\.scss}line{font-family:\00003213}}
+.credits ul li {
+  margin: 10px 0 0 0;
+}
+
 /*****************/

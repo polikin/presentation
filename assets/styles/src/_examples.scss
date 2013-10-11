@@ -13,7 +13,7 @@
 .transition {
 	@include transition(0.3s);
 
-	&:hover { background: $tertiaire; };
+	&:hover { background: $tertiary; };
 }
 
 .transition-delay { 
@@ -48,7 +48,7 @@
 
 .secondary { background: $secondary; }
 
-.tertiaire { background: $tertiaire; }
+.tertiaire { background: $tertiary; }
 
 .image-resize {
 	position:	relative;
@@ -109,7 +109,7 @@
 		background:	$secondary;
 		
 		.mon-span {
-			background:	$tertiaire;
+			background:	$tertiary;
 		}
 	}
 }
@@ -139,7 +139,7 @@
 		}
 	}@else {
 		&:before { 
-			color:	$tertiaire;
+			color:	$tertiary;
 			content: "$if == false, ce contenu s'affiche"; 
 		}
 	}
@@ -172,3 +172,19 @@
 		}
 	}
 }
+
+/*****************/
+
+/**
+* @tags: color manipulation
+*/
+
+.primary-lighten { background: lighten($primary, 40) !important; }
+
+.secondary-darken { 
+	background : darken($secondary, 40) !important; 
+	
+	code { color: $white !important; }
+}
+
+.tertiary-complement { background: complement($tertiary) !important; }

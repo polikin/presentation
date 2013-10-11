@@ -10,6 +10,10 @@
 	
 	<script type="text/javascript">
 		SyntaxHighlighter.all()	
+		
+		$(document).ready(function() {
+			$('a[href^="http://"], a[href^="https://"]').attr('target','_blank');	
+		});
 	</script>
 	
 	</body>
