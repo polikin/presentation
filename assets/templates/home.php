@@ -264,7 +264,7 @@
 			<li><a href="http://thesassway.com/">The Sass Way</a></li>
 			<li><a href="https://speakerdeck.com/imathis/sass-compass-the-future-of-stylesheets-now">https://speakerdeck.com/imathis/sass-compass-the-future-of-stylesheets-now - Brandon Mathis</a></li>
 			<li><a href="http://blog.humancoders.com/les-id-es-re-ues-sur-les-pr-processeurs-css-sass-53/">http://blog.humancoders.com/les-id-es-re-ues-sur-les-pr-processeurs-css-sass-53/ - Camille Roux</a></li>
-			<li><a href="http://designmodo.github.io/Flat-UI/">Flat U Kit</a></li>
+			<li><a href="http://designmodo.github.io/Flat-UI/">Flat UI Kit</a></li>
 		</ul>
 		
 		<br><br><br>
