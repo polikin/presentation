@@ -219,6 +219,20 @@
 			<div class="for-6"></div>
 		</div>
 	</div>
+	
+	<h2>sprite</h2>
+	
+	<br><br>
+	
+	<div class="sprite cf">
+		<div class="sprites-folder-book"></div>
+		<div class="sprites-folder-calendar"></div>
+		<div class="sprites-folder-chat"></div>
+		<div class="sprites-folder-clipboard"></div>
+		<div class="sprites-folder-compas"></div>
+	</div>
+	
+	<br><br><br>
 
 	<div class="credits cf">
 		<h4>Auteurs: Nicolas Poliquin &amp; Mathieu Rivest</h4>
@@ -250,8 +264,10 @@
 			<li><a href="http://thesassway.com/">The Sass Way</a></li>
 			<li><a href="https://speakerdeck.com/imathis/sass-compass-the-future-of-stylesheets-now">https://speakerdeck.com/imathis/sass-compass-the-future-of-stylesheets-now - Brandon Mathis</a></li>
 			<li><a href="http://blog.humancoders.com/les-id-es-re-ues-sur-les-pr-processeurs-css-sass-53/">http://blog.humancoders.com/les-id-es-re-ues-sur-les-pr-processeurs-css-sass-53/ - Camille Roux</a></li>
+			<li><a href="http://designmodo.github.io/Flat-UI/">Flat U Kit</a></li>
 		</ul>
 		
+		<br><br><br>
 		
 	</div>
 	

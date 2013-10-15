@@ -188,3 +188,23 @@
 }
 
 .tertiary-complement { background: complement($tertiary) !important; }
+
+/*****************/
+
+/**
+* @tags: compass sprites
+*/
+
+@import "../images/sprites-folder/*.png";
+@include all-sprites-folder-sprites(true);
+
+.sprite {
+	div {
+		margin : 0 29px 0 0;
+		float  : left;
+		
+		&:last-child { margin-right: 0; };
+	}
+}
+
+/*****************/

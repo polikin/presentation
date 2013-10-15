@@ -78,8 +78,8 @@ html {
 * @tags: div var
 */
 
-$div-width  : 32%;
-$div-height : 200px;
+$div-width  : 48%;
+$div-height : 400px;
 $div-bckg   : $primary;
 
 
@@ -143,7 +143,7 @@ h3 {
 		float      : left;
 	
 		font: {
-			size   : 16px;
+			size   : 20px;
 			family : monaco;
 		};
 		
@@ -154,7 +154,7 @@ h3 {
 		@include borderbox();
 		@include transition(0.3s);
 	
-		&:nth-child(3n) { margin-right: 0; }
+		&:nth-child(2n) { margin-right: 0; }
 		
 		//&:hover { border:	8px black solid; };
 		
@@ -186,7 +186,7 @@ h3 {
 			}
 			
 			&.output {
-				font-size:	17px;
+				font-size:	20px;
 				
 				@include opacity(0);
 				@include prefixer(transform, scale(0.5));
