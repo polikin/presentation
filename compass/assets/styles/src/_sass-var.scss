@@ -1,0 +1,211 @@
+/**
+* @file _finncomfort-var.scss
+*
+* @copyright (c) Locomotive 2013
+* @author Nicolas Poliquin <nic@locomotive.ca>
+* @version @Tue Jun 25 15:42:30 EDT 2013
+* @license (c) Locomotive 2013
+*/
+
+/*****************/
+
+/**	@Formatting
+* Hyphen separated class names || .selector-name
+* Inline style for one property || .selector { color: black; }
+*
+* Tabs between property and value | One selector per line
+* @format:
+* .selector {
+*	margin:		0;
+*	padding:	0;
+* 	color:		black;
+* }
+* 
+* More than two selector attribut || font, margin , padding, border, background, overflow
+* @format:
+*	margin: {
+* 		top: 	10px;
+*		bottom: 10px;	
+*	}
+* 
+* Declaration Order
+* @position || absolute, z-index, top, left
+* @display & box model || block, overflow, width, height, padding, margin
+* @other || background, color, font, text-align
+* @mixin
+*
+* @format:
+* .selector {
+* position:	absolute;
+* z-index:		100;
+* 	
+* display:	block;
+* width: 	100px;
+* height:	100px;
+* 
+* background:	red;
+* color:		black;
+* font-size:	16px;
+*	
+* }
+*/
+
+/*****************/
+
+
+
+/*  =========
+  MIXIN
+=========
+*/
+
+/**	
+* Base Styles
+* @file: screen.scss 
+* @format: @include base();
+*/
+
+
+@mixin base() {
+	
+	body,
+	html {
+		margin:		0;
+		padding:	0;
+		
+		font-family:	$montserrat;
+	}
+	
+	html { 	
+		-webkit-text-size-adjust: none; /* Prevent font scaling in landscape */ 
+		-webkit-overflow-scrolling: touch; /* enables momentum scrolling */
+	}
+	  
+	body {		
+		line-height:	normal;
+		padding:		0;
+		margin:			0;
+		display:		inherit !important;
+		background: 	$white;
+		//overflow-x:		hidden;
+		
+		
+		-moz-font-smoothing: antialiased;
+		-webkit-font-smoothing: antialiased;
+	}
+	
+	input,
+	textarea { 
+		resize:				none;		
+		-webkit-appearance: none;
+		-webkit-border-radius: 0px;
+	
+		padding:	10px;
+		border:		none;
+		background:	none;
+	}
+	
+	option { -webkit-appearance: menulist-button; }
+	
+	table {
+		border:	0;
+	}
+	
+	textarea:focus, 
+	input:focus{ outline: none; }
+
+	ul {
+		li {		
+			b, strong { color:	#000; }
+		}
+	}
+
+	a, 
+	img, 
+	a.active {
+		// -webkit-backface-visibility: hidden;
+		// 		backface-visibility: hidden;
+	}
+
+	.cf:after {
+		clear: 		both;
+	    content: 	" ";
+	    display: 	block;
+	    font-size: 	0;
+	    height: 	0;
+	    visibility: hidden;
+	}
+	
+	.float-left { float:	left;}
+
+	.float-right { float:	right;}
+	
+	img { 
+		max-width: 	100%; 
+		display:	block; 
+	}
+		
+	.columns,
+	input,
+	textarea {
+		box-sizing: 		border-box;
+		-webkit-box-sizing:	border-box;
+		-moz-box-sizing: 	border-box;
+	}
+	
+	h1, h2, h3, h4, h5, h6 { font-weight: normal;}
+	
+	.unknown-width {
+		position : relative;
+		left     : 50%;
+		float    : left;
+		
+		div {
+			position : relative;
+			left     : -50%;
+			float    : left;
+		}
+	}
+	
+	.clear {
+		clear: both;
+		display: block;
+		overflow: hidden;
+		visibility: hidden;
+		width: 0;
+		height: 0;
+	}
+	
+	.clear-left { clear: left;}
+	
+}
+
+/*****************/
+
+
+/*****************/
+
+/*  =========
+  FONTS
+=========
+*/
+
+/**	Fonts
+* @tags: font-face
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+$montserrat: 'Montserrat', sans-serif;
+
+/*****************/
+
+/**
+* @tags: 3D transform
+*/
+
+%backface { @include prefixer(backface-visibility, hidden);}
+
+%preserve { @include prefixer(transform-style, preserve-3d); }
+
+%perspective { @include prefixer(perspective, 500px); }

@@ -1,0 +1,683 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+/**
+* These styles are written and built with sass, compass mixins and susy framework. If you have any questions about how to use sass/compass or susy, please refer to those links:
+* http://sass-lang.com/tutorial.html || http://thesassway.com/
+* http://compass-style.org/help/
+* http://susy.oddbird.net/guides/reference/
+*
+* Preprocessor App for PC & MAC || Note: This project was compiled with Codekit
+*
+* Prepros || http://alphapixels.com/prepros/ || PC & MAC
+* Codekit || http://incident57.com/codekit/ || MAC only
+*
+* Contact Nicolas by email after reading the sass, compass and Susy docs if you still have issues.
+* Email: nic@locomotive.ca
+*/
+/*****************/
+/**	Core function
+* @tags: mixins
+* @file: compass mixins + _core.functions | http://compass-style.org/reference/compass/ | http://polikin.github.io/core/ 
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/**
+* @tags:	core mixins library
+*/
+/*****************/
+/**
+* @tags: 	url path for background mixins
+* @usage: 	choose 3 different path. null by default, true = ../../../../charcoal/modules/admin/assets/images/, module = get-asset-images?a=
+* 			can be define into stylesheet or specefic class
+*/
+/*****************/
+/**
+* @file _core-functions.scss
+*
+* @author Nicolas Poliquin <nicolas@polikin.ca>
+* @version @Mon Jul  8 15:40:21 EDT 2013
+* @license (c) Polikin.ca 2013
+*/
+/*****************/
+/*  =========
+  MIXIN
+=========
+*/
+/**
+* @tags  : media queries
+* @mixin : @include media-query(value) { attribut }
+* @usage : .selector @include media-query(320px) { width: 60%; }; }
+*/
+/**
+* @tags  : position
+* @mixin : @include position();
+* @usage : .selector { @include position(absolute, 0, 0, 0, 0); }
+*/
+/**
+* @tags  : custom size
+* @mixin : @include size();
+* @usage : .selector { @include size(104, 104); }
+*/
+/*****************/
+/**
+* @tags  : backgroundimage
+* @for   : Load background image
+* @mixin : @include backgroundimage();
+* @usage : .selector { @include backgroundimage(bckg-btn-dwlmenu, png); }
+*/
+/*****************/
+/**
+* @tags    : image height
+* @for     : Grab the height of the image in your CSS
+* @library : Compass Image Helper || http://compass-style.org/reference/compass/helpers/urls/
+* @mixin   : @include image-height();
+* @usage   : .selector { @include image-height(img-name, png); }
+*/
+/*****************/
+/**
+* @tags    : image width
+* @for     : Grab the width of the image in your CSS
+* @library : Compass Image Helper || http://compass-style.org/reference/compass/helpers/urls/
+* @mixin   : @include image-width();
+* @usage   : .selector { @include image-width(img-name, png); }
+*/
+/*****************/
+/**
+* @tags    : image size
+* @for     : Grab the height/width of the image in your CSS
+* @library : Compass Image Helper || http://compass-style.org/reference/compass/helpers/urls/
+* @mixin   : @include image-size();
+* @usage   : .selector { @include image-size(img-name, png); }
+*/
+/*****************/
+/**
+* @tags    : center element horizontally in absolute position
+* @for     : Grab the height/width of the image and add a value to the margin-left (half of the width)
+* @library : Compass Image Helper || http://compass-style.org/reference/compass/helpers/urls/
+* @mixin   : @include center-absolute();
+* @usage   : .selector { @include center-absolute(img-name, png); }
+*/
+/*****************/
+/**
+* @tags  : prefix
+* @for   : add prefix to your attribut
+* @mixin : @include prefixer();
+* @usage : .selector { @include prefixer(attribut, value, webkit ms moz o spec); } || @include prefixer(background-size, 100%, webkit ms moz o spec);
+*/
+/*****************/
+/**
+* @tags  : prefix & suffix
+* @for   : add prefix to your attribut
+* @mixin : @include prefix-suffix();
+* @usage : .selector { @include prefix-suffix(attribut, value, webkit ms moz o spec); } || @include prefixer(background-size, 100%, webkit ms moz o spec);
+*/
+/*****************/
+/**
+* @tags  : suffix
+* @for   : add suffix to your attribut
+* @mixin : @include suffix();
+* @usage : .selector { @include suffix(attribut, value, webkit ms moz o spec); } || @include suffix(background-size, 100%, webkit ms moz o spec);
+*/
+/*****************/
+/**
+* @tags  : keyframes
+* @for   : add suffix to your keyframes animation
+* @mixin : @include keyframe(animationName, webkit moz o ms spec);
+* @usage : 
+* .selector { @include keyframes(block1-visible, webkit ms moz o spec) {
+*		from, 0% {  }
+*		to { }
+*	}
+*/
+@-webkit-keyframes opacityValue {}
+/*****************/
+/**
+* @tags  : debug
+* @for   : add red border to element
+* @mixin : @include debug();
+* @usage : .selector { @include debug(); }
+*/
+/*****************/
+/**
+* @tags  : include padding into the width & height of your element
+* @mixin : @include borderbox();
+* @usage : .selector { @include borderbox(); }
+*/
+/*****************/
+/**
+* @tags  : css3 transition delay
+* @mixin : @include delay();
+* @usage : .selector { @include delay(0.3s); }
+*/
+/*****************/
+/*  =========
+  FONT FACE
+=========
+*/
+/**
+* @tags  : grab every font-face file
+* @mixin : @include font-face();
+* @usage : .selector { @include font-face(font-custom-name, '../dir/font-file-name'); } | @include font-face(avenir, '../fonts/avenir-next-lt-pro');
+*/
+/**
+* @tags   : arrow
+* @format : .selector(@include arrow(10px, black, up);
+*/
+/**
+* @tags   : ie js breakpoint fix
+* @format : .selector(@mixin ie-grid(width:60%;));
+*/
+/*****************/
+/**
+* @tags   : css3 circle
+* @extend : pager button
+* @format : 
+* @include circle(width value, height value, background-color);
+*/
+/**
+* @tags   : add any properties in placeholder
+* @format : @include placeholder-color() {your properties}
+* @usage  : @include placeholder-color($color: red);
+*/
+/**
+* @tags   : add any properties in placeholder
+* @format : @include placeholder-content() {your properties}
+* @usage  : @include placeholder-content() { color: yellow; }
+*/
+/*****************/
+/**
+* @tags   : css ellipsis
+* @extend : pager button
+* @format : 
+* <div class="pager"></div>
+*/
+/*****************/
+/**
+* @tags:	css3 easing animation library || https://github.com/jhardy/compass-ceaser-easing
+*/
+/*****************/
+/**
+* @tags:	css3 animation library || https://github.com/adamstac/animate.sass
+*/
+/*****************/
+/**
+* @tags:	susy compass grid || (http://susy.oddbird.net/
+*/
+/*****************/
+/**
+* @tags: project colors || primary, secondary, tertiaire
+*/
+/**
+* @tags: main colors | primary = green | secondary = blue | tertiaire = grey
+* @file: screen.scss
+* @reference: http://flatuicolors.com/
+*/
+/* turquoise */
+/* emerald */
+/* peter river */
+/* midnight blue */
+/*****************/
+/**
+* @tags: base colors
+* @file: screen.scss
+*/
+/*****************/
+/**
+* @tags: base component
+*/
+/**
+* @file _finncomfort-var.scss
+*
+* @copyright (c) Locomotive 2013
+* @author Nicolas Poliquin <nic@locomotive.ca>
+* @version @Tue Jun 25 15:42:30 EDT 2013
+* @license (c) Locomotive 2013
+*/
+/*****************/
+/**	@Formatting
+* Hyphen separated class names || .selector-name
+* Inline style for one property || .selector { color: black; }
+*
+* Tabs between property and value | One selector per line
+* @format:
+* .selector {
+*	margin:		0;
+*	padding:	0;
+* 	color:		black;
+* }
+* 
+* More than two selector attribut || font, margin , padding, border, background, overflow
+* @format:
+*	margin: {
+* 		top: 	10px;
+*		bottom: 10px;	
+*	}
+* 
+* Declaration Order
+* @position || absolute, z-index, top, left
+* @display & box model || block, overflow, width, height, padding, margin
+* @other || background, color, font, text-align
+* @mixin
+*
+* @format:
+* .selector {
+* position:	absolute;
+* z-index:		100;
+* 	
+* display:	block;
+* width: 	100px;
+* height:	100px;
+* 
+* background:	red;
+* color:		black;
+* font-size:	16px;
+*	
+* }
+*/
+/*****************/
+/*  =========
+  MIXIN
+=========
+*/
+/**	
+* Base Styles
+* @file: screen.scss 
+* @format: @include base();
+*/
+/*****************/
+/*****************/
+/*  =========
+  FONTS
+=========
+*/
+/**	Fonts
+* @tags: font-face
+*/
+/*****************/
+/**
+* @tags: 3D transform
+*/
+.examples div code {
+  -webkit-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.examples div code {
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+/*****************/
+/**
+* @tags: project styles
+*/
+/**
+* @file _sass-screen.scss
+*
+* @copyright (c) Locomotive 2013
+* @author Nicolas Poliquin <nic@locomotive.ca>
+* @version @Wed Oct  2 09:38:50 EDT 2013
+*/
+/*****************/
+/**	@Formatting
+* Hyphen separated class names || .selector-name
+* Inline style for one property || .selector { color: black; }
+*
+* Tabs between property and value | One selector per line
+* @format:
+* .selector {
+*	margin:		0;
+*	padding:	0;
+* 	color:		black;
+* }
+* 
+* More than two selector attribut || font, margin , padding, border, background, overflow
+* @format:
+*	margin: {
+* 		top: 	10px;
+*		bottom: 10px;	
+*	}
+* 
+* Declaration Order
+* @position || absolute, z-index, top, left
+* @display & box model || block, overflow, width, height, padding, margin
+* @other || background, color, font, text-align
+* @mixin
+*
+* @format:
+* .selector {
+* position:	absolute;
+* z-index:		100;
+* 	
+* display:	block;
+* width: 	100px;
+* height:	100px;
+* 
+* background:	red;
+* color:		black;
+* font-size:	16px;
+*	
+* }
+*/
+/*****************/
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+html {
+  -webkit-text-size-adjust: none;
+  /* Prevent font scaling in landscape */
+  -webkit-overflow-scrolling: touch;
+  /* enables momentum scrolling */
+}
+
+body {
+  line-height: normal;
+  padding: 0;
+  margin: 0;
+  display: inherit !important;
+  background: white;
+  -moz-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+}
+
+input,
+textarea {
+  resize: none;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  padding: 10px;
+  border: none;
+  background: none;
+}
+
+option {
+  -webkit-appearance: menulist-button;
+}
+
+table {
+  border: 0;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+ul li b, ul li strong {
+  color: #000;
+}
+
+.cf:after {
+  clear: both;
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.columns,
+input,
+textarea {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+.unknown-width {
+  position: relative;
+  left: 50%;
+  float: left;
+}
+.unknown-width div {
+  position: relative;
+  left: -50%;
+  float: left;
+}
+
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.clear-left {
+  clear: left;
+}
+
+body,
+html {
+  height: 100%;
+  font-size: 13px;
+  background: #F9F9F9;
+}
+
+.container {
+  margin: 0 auto;
+  height: auto;
+  width: 1140px;
+  float: none;
+  background: none;
+}
+
+/**
+* @tags: div var
+*/
+/*****************/
+/**
+* @tags: placeholder
+*/
+/*****************/
+h1, h2, h3 {
+  margin: 40px 0;
+  font-size: 80px;
+  font-weight: 700;
+  display: block;
+  text-align: center;
+  color: #2c3e50;
+}
+h1 span, h2 span, h3 span {
+  display: block;
+  font-size: 20px;
+}
+
+h2 {
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
+h3 {
+  margin-bottom: 0;
+  font-size: 40px;
+  color: #8e44ad;
+  text-align: left;
+}
+
+.examples div {
+  position: relative;
+  margin: 0 2% 20px 0;
+  width: 48%;
+  height: 300px;
+  text-align: center;
+  float: left;
+  font-size: 20px;
+  font-family: monaco;
+  color: white;
+  background-color: #1abc9c;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+.examples div:nth-child(2n) {
+  margin-right: 0;
+}
+.examples div.not {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  opacity: 0.3;
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  transition-delay: 0s;
+}
+.examples div.secondary {
+  background: #8e44ad;
+}
+.examples div.tertiaire {
+  background: #3498db;
+}
+.examples div code {
+  height: 20%;
+  color: black;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  position: absolute;
+  /* @if div height is know */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+.ie7 .examples div code {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -/2;
+  z-index: 9999;
+}
+.examples div code.hidden {
+  -webkit-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  -o-transform: scale(0.5);
+  transform: scale(0.5);
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+.examples div code.output {
+  font-size: 20px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  -o-transform: scale(0.5);
+  transform: scale(0.5);
+}
+.examples div code.output.hidden {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+.credits {
+  margin: 90px 0 0 0;
+  font-size: 15px;
+}
+.credits a {
+  color: #3498db;
+}
+.credits ul {
+  margin: 30px 60px 0 0;
+}
+.credits ul li {
+  margin: 10px 0 0 0;
+}
+
+/*****************/
