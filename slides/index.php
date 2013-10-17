@@ -21,6 +21,24 @@
 		<script type="text/javascript" charset="utf-8" src="assets/scripts/jquery-1.10.2.min.js"></script>
 		<script type="text/javascript" charset="utf-8" src="assets/scripts/jquery.easing.1.3.js"></script>
 		
+			
+		<link rel="stylesheet" type="text/css" href="assets/styles/reveal.min.css" media="screen,projection" />
+		<link rel="stylesheet" type="text/css" href="assets/styles/night.css" media="screen,projection" />
+		<link rel="stylesheet" type="text/css" href="assets/styles/monokai.css" media="screen,projection" />
+		
+		<script type="text/javascript" charset="utf-8" src="assets/scripts/head.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="assets/scripts/reveal.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="assets/scripts/highlight.pack.js"></script>
+		
+		
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="assets/styles/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+		
+		
+		
+		
 	</head>	
 	<body>
 
@@ -77,19 +95,6 @@
 			</div>
 
 		</div>
-		
-		<script type="text/javascript" charset="utf-8" src="assets/scripts/head.min.js"></script>
-		<script type="text/javascript" charset="utf-8" src="assets/scripts/reveal.min.js"></script>
-		<script type="text/javascript" charset="utf-8" src="assets/scripts/highlight.pack.js"></script>
-			
-		<link rel="stylesheet" type="text/css" href="assets/styles/reveal.min.css" media="screen,projection" />
-		<link rel="stylesheet" type="text/css" href="assets/styles/night.css" media="screen,projection" />
-		<link rel="stylesheet" type="text/css" href="assets/styles/monokai.css" media="screen,projection" />
-		
-		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
-		<script>
-			document.write( '<link rel="stylesheet" href="assets/styles/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-		</script>
 		
 		<script type="text/javascript">
 			Reveal.initialize({
