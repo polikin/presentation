@@ -292,8 +292,7 @@
 		
 		/*****************/
 		
-		$(document).on('click','.examples div', function(e){	
-		
+		$(document).on('click','.examples div', function(e){			
 			$(this).find('code').toggleClass('hidden');
 		});
 	});

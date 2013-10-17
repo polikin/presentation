@@ -580,7 +580,7 @@ h3 {
   position: relative;
   margin: 0 2% 20px 0;
   width: 48%;
-  height: 400px;
+  height: 300px;
   text-align: center;
   float: left;
   font-size: 20px;
@@ -671,7 +671,7 @@ h3 {
   font-size: 15px;
 }
 .credits a {
-  color: #8e44ad;
+  color: #3498db;
 }
 .credits ul {
   margin: 30px 60px 0 0;
