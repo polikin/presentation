@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule ^presentation/(.*) folder1/$1
