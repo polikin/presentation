@@ -18,23 +18,21 @@
 	
 		<title>Compass</title>
 				
-		<script type="text/javascript" charset="utf-8" src="assets/scripts/jquery-1.10.2.min.js"></script>
-		<script type="text/javascript" charset="utf-8" src="assets/scripts/jquery.easing.1.3.js"></script>
-		
-			
-		<link rel="stylesheet" type="text/css" href="assets/styles/reveal.min.css" media="screen,projection" />
-		<link rel="stylesheet" type="text/css" href="assets/styles/night.css" media="screen,projection" />
-		<link rel="stylesheet" type="text/css" href="assets/styles/monokai.css" media="screen,projection" />
-		
-		<script type="text/javascript" charset="utf-8" src="assets/scripts/head.min.js"></script>
-		<script type="text/javascript" charset="utf-8" src="assets/scripts/reveal.min.js"></script>
-		<script type="text/javascript" charset="utf-8" src="assets/scripts/highlight.pack.js"></script>
-		
-		
+		<link rel="stylesheet" href="assets/styles/reveal.min.css">
+		<link rel="stylesheet" href="assets/styles/theme/night.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="assets/styles/lib/css/monokai.css">
+
 		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
 		<script>
 			document.write( '<link rel="stylesheet" href="assets/styles/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
 		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+		
 		
 		
 		
@@ -54,40 +52,44 @@
 					<h2>compass sprite</h2>
 					
 					<pre>
-						<code data-trim>							
-							@import "../images/sprites-folder/*.png";
-							@include all-sprites-folder-sprites(<strong style="color: #3498db;">true</strong>);
-							
-							.sprites-folder-sprite, 
-							.sprites-folder-book, 
-							.sprites-folder-calendar, 
-							.sprites-folder-chat, ... {
-								    background: url('../images/sprites-folder-<strong style="color: #3498db;">sf54b147fa4</strong>.png') no-repeat;
-							}
-							
-							.sprites-folder-book {
-							  background-position: 0 -823px;
-							  height: 200px;
-							  width: 200px;
-							}
+						
+						<?php
+						/* pas d'indentation pour le <code>, sinon le code s'affiche mal dans chrome et pdf généré */
+						?>
+<code data-trim>							
+	@import "../images/sprites-folder/*.png";
+	@include all-sprites-folder-sprites(true);
 
-							.sprites-folder-calendar {
-							  background-position: 0 -223px;
-							  height: 200px;
-							  width: 200px;
-							}
+	.sprites-folder-sprite, 
+	.sprites-folder-book, 
+	.sprites-folder-calendar, 
+	.sprites-folder-chat, ... {
+		    background: url('../images/sprites-folder-sf54b147fa4.png') no-repeat;
+	}
 
-							.sprites-folder-chat {
-							  background-position: 0 -423px;
-							  height: 200px;
-							  width: 200px;
-							}
-					    </code>
+	.sprites-folder-book {
+	  background-position: 0 -823px;
+	  height: 200px;
+	  width: 200px;
+	}
+
+	.sprites-folder-calendar {
+	  background-position: 0 -223px;
+	  height: 200px;
+	  width: 200px;
+	}
+
+	.sprites-folder-chat {
+	  background-position: 0 -423px;
+	  height: 200px;
+	  width: 200px;
+	}
+</code>
 					</pre>
 				</section>
 
 				<section>
-					<h2>image généré</h2>
+					<h2>images générés</h2>
 					
 					<img src="assets/images/compass-sprite-output.png" alt="">
 				</section>
@@ -96,18 +98,31 @@
 
 		</div>
 		
-		<script type="text/javascript">
+		<script src="assets/scripts/head.min.js"></script>
+		<script src="assets/scripts/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
-				transition: 'linear',
-				loop: true,
+				controls: true,
+				progress: true,
 				history: true,
+				center: true,
 				width: 1400,
-				src: 'assets/scripts/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); }
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'assets/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
 			});
-			
-			hljs.initHighlightingOnLoad();
-		
+
 		</script>
+		
 	
 	</body>
 </html>
