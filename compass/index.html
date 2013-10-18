@@ -625,7 +625,19 @@ abs(-24) /* 24 */
 							hljs.initHighlightingOnLoad(); 
 							hljs.tabReplace = '    ';
 						} 
-					}
+					},
+					{ src: 'https://raw.github.com/Remotes/Remotes/master/dist/remotes.ne.min.js', async: true, 
+						callback: function() { 
+							new Remotes("preview")
+								.on("swipe-left", function(e){ Reveal.navigateRight(); })
+								.on("swipe-right", function(e){ Reveal.navigateLeft(); })
+								.on("swipe-up", function(e){ Reveal.navigateDown(); })
+								.on("swipe-down", function(e){ Reveal.navigateUp(); })
+								.on("tap", function(e){ 
+									Reveal.toggleOverview(); 
+								});
+						} 
+					},
 				]
 			});
 
