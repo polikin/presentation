@@ -9,8 +9,8 @@
 	
 		<title>Présentation Compass</title>
 				
-		<link rel="stylesheet" href="assets/styles/reveal.min.css">
-		<link rel="stylesheet" href="assets/styles/theme/night.css" id="theme">
+		<link rel="stylesheet" href="assets/styles/reveal.css">
+		<link rel="stylesheet" href="assets/styles/night.css" id="theme">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="assets/styles/lib/css/monokai.css">
@@ -34,54 +34,559 @@
 		<div class="reveal">
 
 			<div class="slides">
-
+				
+				<!-- **** @home **** -->
+				
 				<section>
 					<img class="blank" src="assets/images/sass-compass-logo.png" alt="">
 				</section>
-
+				
+				<!-- **** @sprite **** -->
+				
 				<section>					
 					<h2>compass sprite</h2>
 					
 					<pre>
-						
 						<code data-trim>							
-	@import "../images/sprites-folder/*.png";
-	@include all-sprites-folder-sprites(true);
+@import "../images/sprites-folder/*.png";
+@include all-sprites-folder-sprites(true);
 
-	.sprites-folder-sprite, 
-	.sprites-folder-book, 
-	.sprites-folder-calendar, 
-	.sprites-folder-chat, ... {
-		    background: url('../images/sprites-folder-sf54b147fa4.png') no-repeat;
-	}
+/* CSS GÉNÉRÉ */
+.sprites-folder-sprite, 
+.sprites-folder-book, 
+.sprites-folder-calendar, 
+.sprites-folder-chat, ... {
+	background: url('../images/sprites-folder-sf54b147fa4.png') no-repeat;
+}
 
-	.sprites-folder-book {
-	  background-position: 0 -823px;
-	  height: 200px;
-	  width: 200px;
-	}
+.sprites-folder-book {
+	background-position: 0 -823px;
+	height: 200px;
+	width: 200px;
+}
 
-	.sprites-folder-calendar {
-	  background-position: 0 -223px;
-	  height: 200px;
-	  width: 200px;
-	}
+.sprites-folder-calendar {
+	background-position: 0 -223px;
+	height: 200px;
+	width: 200px;
+}
 
-	.sprites-folder-chat {
-	  background-position: 0 -423px;
-	  height: 200px;
-	  width: 200px;
-	}
-</code>
+.sprites-folder-chat {
+	background-position: 0 -423px;
+	height: 200px;
+	width: 200px;
+}
+						</code>
 					</pre>
 				</section>
-
+				
 				<section>
 					<h2>images générés</h2>
 					
 					<img src="assets/images/compass-sprite-output.png" alt="">
 				</section>
+				
+				<!-- **** @import **** -->
+				
+				<section>
+					<h2>importé un fichier .scss</h2>
+					
+					<pre>
+						<code data-trim>
+/* import sans le "_" */
+@import "le_fichier_importe";
 
+/* import avec le "_" */
+@import "_le_fichier_importe";							
+						</code>
+					</pre>
+					
+					<img class="blank" src="assets/images/img-import.png" alt="">
+					
+				</section>
+				
+				<section>
+					<h2>différence entre les deux façons d'importer</h2>
+					
+					<div class="fragment">
+						<h5 class="primary">importer un fichier <span class="highlight">sans</span> le <span class="highlight">"_"</span> indique que ce fichier doit être généré en <span class="highlight">.css</span></h5>
+						<p>fichier généré: le_fichier_importe.css</p>
+					</div>
+					
+					<br>
+					
+					<div class="fragment">
+						<h5 class="primary">importer un fichier <span class="highlight">avec</span> le <span class="highlight">"_"</span> indique que ce fichier doit être importé dans le fichier compilé</h5>
+					</div>
+					
+				</section>
+				
+				<section>
+					<h2>faire un @import dans un sélecteur</h2>
+					
+					<pre>
+						<code data-trim>
+.maclass {
+	@import "_le_fichier_importe";
+}
+							
+						</code>
+					</pre>
+					
+					
+				</section>
+				
+				<!-- **** @nesting **** -->
+				
+				<section>
+					<h2>nesting (indentation)</h2>
+					
+					<ul>
+						<li>sélecteurs</li>
+						<li>propriété</li>
+						<li>sélecteur parent (&)</li>
+						<li>.class, #id, :hover, pseudo-element</li>
+					</ul>
+					
+				</section>
+				
+				<section>
+					<h2>nesting (indentation)</h2>
+					
+					<pre>
+						<code data-trim>
+.ma-classe-parent {
+	.ma-classe-enfant {
+		strong {
+			color: black;
+		}
+	}
+}
+
+/* CSS GÉNÉRÉ */
+.ma-class-parent .ma-class-enfant strong { color: black; }
+						</code>
+					</pre>
+					
+					<p>* Ne pas dépasser 3 niveaux d'indentation</p>
+					
+				</section>
+				
+				<section>
+					<h2>nesting (.class)</h2>
+					
+					<pre>
+						<code data-trim>
+.ma-class-parent {
+	.ma-classe-enfant {
+		&.nouvelleclass {
+			color: black;
+		}
+	}
+}
+
+/* CSS GÉNÉRÉ */
+.ma-class-parent .ma-class-enfant.nouvelleclass { color: black; }
+
+						</code>
+					</pre>					
+				</section>
+				
+				<section>
+					<h2>nesting (indentation) - <span class="highlight">à ne pas faire</span></h2>
+					
+					<pre>
+						<code data-trim>
+.ma-classe-parent {
+	.ma-classe-enfant {
+		span {
+			a {
+				strong {
+					color: black;
+				}
+			}
+		}
+	}
+}
+						</code>
+					</pre>
+					
+				</section>
+				
+				<section>
+					<h2>nesting (& parent)</h2>
+					
+					<pre>
+						<code data-trim>
+.ma-class-parent {
+	.ma-classe-enfant {
+		.touch & {
+			color: black;
+		}
+	}
+}
+
+/* CSS GÉNÉRÉ */
+.touch.ma-class-parent.ma-class-enfant { color: black; }
+
+						</code>
+					</pre>
+					
+					<p>* .touch est une fonctionnalité de Modernizr</p>
+										
+				</section>
+				
+				<!-- **** @variable **** -->
+				
+				<section>
+					<h2>variables</h2>
+					
+					<pre>
+						<code data-trim>
+$primary:	#1abc9c; /* turquoise */
+
+$secondary:	#8E44AD; /* emerald */
+
+$tertiary:	#3498db; /* peter river */	
+
+$hover:	$secondary;		
+
+$family: 'Open sans', serif;
+
+$margin: 10px 20px;				
+						</code>
+					</pre>
+					
+				</section>
+				
+				<!-- **** @mixins **** -->
+				
+				<section>
+					<h2>mixins</h2>
+					
+					<pre>
+						<code data-trim>
+@mixin circle($circle-size, $color) {
+	width: 		$circle-size; 
+	height: 	$circle-size; 
+	background:	$color;
+
+	@include border-radius($circle-size/2);
+}		
+						</code>
+					</pre>
+					
+				</section>
+				
+				<section>
+					<h2>@include</h2>
+					
+					<pre>
+						<code data-trim>
+/* APPELÉ LE MIXIN */
+.circle {
+	@include circle(200px, red);
+}
+							
+/* CSS GÉNÉRÉ */
+.circle {
+	width: 200px;
+	height: 200px;
+	background: red;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	-ms-border-radius: 100px;
+	-o-border-radius: 100px;
+	border-radius: 100px;
+}			
+						</code>
+					</pre>					
+					<div class="circle"></div>
+					
+				</section>
+				
+				<!-- **** @extend **** -->
+				
+				<section>
+					<h2>@extend</h2>
+					
+					<ul>
+						<li>placeholder</li>
+						<li>classe</li>
+					</ul>
+					
+				</section>
+				
+				<section>
+					<h2>extend placeholder</h2>
+					
+					<pre>
+						<code data-trim>
+%border-bottom {
+	padding: 0 0 30px 0;
+	border-bottom: 2px blue solid;
+}		
+
+.ma-classe {
+	@extend %border-bottom;
+}
+
+.mon-autre-classe {
+	@extend %border-bottom;
+}
+
+/* CSS GÉNÉRÉ */
+.ma-classe, .mon-autre-classe {
+	padding: 0 0 30px 0;
+	border-bottom: 2px blue solid
+}
+						</code>
+					</pre>
+					
+					<p>* le placeholder n'est pas compilé dans le .css final</p>
+					
+				</section>
+				
+				<section>
+					<h2>extend class</h2>
+					
+					<pre>
+						<code data-trim>
+
+.ma-classe {
+	padding: 0 0 30px 0;
+	border-bottom: 2px blue solid;
+}
+
+.mon-autre-classe {
+	@extend .ma-classe;
+}
+
+/* CSS GÉNÉRÉ */
+.ma-classe, .mon-autre-classe {
+	padding: 0 0 30px 0;
+	border-bottom: 2px blue solid
+}
+						</code>
+					</pre>
+					
+				</section>
+				
+				<!-- **** @mathematique **** -->
+				<section>
+					<h2>calcul mathématique</h2>
+				</section>
+				
+				
+				<section>
+					<h2>calcul mathématique</h2>
+					
+					<p>Les opérations mathématique (+, -, *, /, %)</p>
+					
+					<pre>
+						<code data-trim>
+1em + 1em; /* 2em */
+
+1em - 1em; /* 0em */
+
+1in + 72pt; /* 2in */
+
+6px * 4; /* 24px /*
+
+18 % 5; /* 3 */
+
+						</code>
+					</pre>
+					
+				</section>
+				
+				<section>					
+					<h2>calcul mathématique</h2>
+					<pre>
+						<code data-trim>
+$container : 960px;
+$main : 680px;
+$gutter : 30px;
+
+.sidebar {
+	width: $container - $main - $gutter;
+}
+
+/* CSS GÉNÉRÉ */
+.sidebar { width: 250px;}
+
+						</code>
+					</pre>
+					
+				</section>
+				
+				<section>					
+					<h2>calcul mathématique</h2>
+					<p>fonctions</p>
+					<pre>
+						<code data-trim>
+percentage(13/25) /* 52% */
+
+round(2.4) /* 2 */
+
+ceil(2.2) /* 3 */
+
+floor(2.6) /* 2 */
+
+abs(-24) /* 24 */
+
+						</code>
+					</pre>
+					
+				</section>
+				
+				<section>					
+					<h2>calcul mathématique</h2>
+					<p>opérateurs (<, >, <=, >=)</p>
+					<pre>
+						<code data-trim>
+1 < 20 /* true */
+
+10 <= 20 /* true */
+
+4 > 1 /* true */
+
+4 >= 1 /* true */
+
+						</code>
+					</pre>
+					
+					<p>comparaison</p>
+					<pre>
+						<code data-trim>
+1 + 1 == 2 /* true */
+						</code>
+					</pre>
+				</section>
+				
+				<section>					
+					<h2>calcul mathématique</h2>
+					<p>conditions</p>
+					<pre>
+						<code data-trim>
+1 < 20 /* true */
+
+10 <= 20 /* true */
+
+4 > 1 /* true */
+
+4 >= 1 /* true */
+
+						</code>
+					</pre>
+				</section>
+				
+				<!-- **** @couleurs **** -->
+				
+				<section>					
+					<h2>couleurs</h2>
+					<ul>
+						<li>lighten</li>
+						<li>darken</li>
+						<li>rgba</li>
+						<li>greyscale</li>
+						<li>change-color</li>
+						<li>adjust-color</li>
+						<li>etc ...</li>
+					</ul>
+				</section>
+				
+				<section>					
+					<h2>couleurs</h2>
+					<p>lighten, darken, rgba</p>
+					<pre>
+						<code data-trim>
+.lighten {
+	background: lighten($primary, 10);
+}
+
+.darken {
+	background: darken($primary, 10);
+}
+
+.rgba {
+	background: rgba($primary, 10);
+}
+
+						</code>
+					</pre>
+				</section>
+				
+				<section>					
+					<h2>couleurs</h2>
+					<img class="blank" src="assets/images/img-colors.jpg" alt="">
+				</section>
+				
+				<section>					
+					<h2>couleurs</h2>
+					<img class="blank" src="assets/images/img-colors2.jpg" alt="">
+				</section>
+				
+				<!-- **** @directive **** -->
+				
+				<section>
+					<h2>directive</h2>
+					<p>@if, @else</p>
+					<pre>
+						<code data-trim>
+.if {
+	$if: false;
+
+	@if $if == true {
+		&:before { 
+			color:	$secondary;
+			content: "$if == true, ce contenu s'affiche"; 
+		}
+	}@else {
+		&:before { 
+			color:	$tertiary;
+			content: "$if == false, ce contenu s'affiche"; 
+		}
+	}
+}
+						</code>
+					</pre>
+				</section>
+				
+				<section>
+					<h2>directive</h2>
+					<p>@for</p>
+					<pre>
+						<code data-trim>
+.for {
+	@for $i from 0 through 6 {
+		.for-#{$i} {
+			height : $i * 20#{px};
+
+			&:before {
+				content: "#{$i * 20}px";
+			}
+		}
+	}
+}
+						</code>
+					</pre>
+				</section>
+				
+				<!-- **** @compass **** -->
+				
+				<section>
+					<h2>compass</h2>
+					<ul>
+						<li>CSS3</li>
+						<li>Compass Helpers</li>
+						<li>Typography</li>
+						<li>Utilities</li>
+						<li>Extensions</li>
+					</ul>
+				</section>
+					
+				
 			</div>
 
 		</div>
@@ -100,12 +605,18 @@
 				center: true,
 				width: 1400,
 
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				theme: Reveal.getQueryHash().theme, 
 				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
 
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
-					{ src: 'assets/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: 'assets/plugin/highlight/highlight.js', async: true, 
+						callback: function() { 
+							hljs.initHighlightingOnLoad(); 
+							hljs.tabReplace = '    ';
+							hljs.highlight(css, code).value;
+						} 
+					}
 				]
 			});
 
