@@ -78,7 +78,7 @@
 
 				<!-- **** @import **** -->
 				<section>
-					<h2>Importation</h2>
+					<h2>Importation (@import)</h2>
 					<p>Éviter la règle CSS “@import’’</p>
 					<p>Le “@import” des fichiers .scss se produit lors de la compilation au lieu du coté client.</p>
 <!-- 
@@ -93,7 +93,7 @@
 					<h2>Indentation</h2>
 					<div class="fragment">
 						<h3>Indentation des selecteurs</h3>
-						<p>Les selecteurs CSS peuvent être indentes.</p>
+						<p>Les selecteurs CSS peuvent être indentés.</p>
 					</div>
 <!-- //Montrer exemple de base sur le nesting -->
 
@@ -127,11 +127,11 @@
 
 				<!-- **** Mixins **** -->
 				<section>
-					<h2>Mixins</h2>
+					<h2>@mixins</h2>
 
 					<div class="fragment">
 						<h3>Définition</h3>
-						<p>Les mixins servent à définir des styles qui sont utilisés à plusieurs endroits. Les mixins acceptent aussi des arguments ce qui permet de produire une plus grande variété de styles.</p>
+						<p>Les mixins servent à définir des styles qui sont utilisés à plusieurs endroits. Les mixins acceptent aussi des arguments, ce qui permet de produire une plus grande variété de styles.</p>
 						<p>Nous utilisons “@mixin” pour définir une mixin.</p>
 					</div>
 
@@ -145,10 +145,10 @@
 
 				<!-- **** Mixins **** -->
 				<section>
-					<h2>Extend</h2>
+					<h2>@extend</h2>
 					<p>Nous voulons souvent utiliser les même styles mais avec une légère différence. La façon la plus fréquente est d’utiliser une classe plus spécifique.</p>
 					<p>Avec SASS, la maintenance est beaucoup plus facile et cela permet d’éviter certaines erreurs.</p>
-					<p>Nous utilisons “@extend .classe” réutiliser les styles d’un selecteur sans avoir à tout dupliquer.</p>
+					<p>Nous utilisons “@extend .classe” pour réutiliser les styles d’un selecteur sans avoir à tout dupliquer.</p>
 <!-- //Montrer un exemple de base de @extend -->
 					<a href="http://krasimirtsonev.com/blog/article/SASS-mixins-extends-and-placeholders-differences-use-cases">Different use cases</a>
 
@@ -170,8 +170,8 @@
 				<!-- **** Colors **** -->
 				<section>
 					<h2>Couleurs</h2>
-					<p>Il est possible de faire des calculs avec les couleurs. Les opérations sont faites sur le canal rouge, vert et bleu.</p>
-					<p>Il est suggérer d’utiliser les fonctions de couleurs.</p>
+					<p>Il est possible de faire des calculs avec les couleurs. Les opérations sont appliquées sur le canal rouge, vert et bleu.</p>
+					<p>Plusieurs fonctions sont disponibles dans SASS</p>
 					<p>rgb, rgba, red, green, blue, mix, hue, saturation, lightness, lighten, darken, saturate, desaturate, greyscale, complement, invert, alpha, rgba et plusieurs autres.</p>
 <!-- //Montrer quelques exemples de fonctions de couleurs -->
 				</section>
@@ -182,7 +182,6 @@
 					<h2>Directives</h2>
 
 					<h3>@import</h3>
-
 
 					<div class="fragment">
 						<h3>@media</h3>
@@ -208,13 +207,13 @@
 
 					<div class="fragment">
 						<h3>@each</h3>
-						<p>Le “@each” compile des styles pour chaque valeur dans un tableau</p>
+						<p>Le “@each” compile des styles pour chaque valeurs dans un tableau</p>
 <!-- //Montrer un exemple du @each -->
 					</div>
 
 					<div class="fragment">
 						<h3>@while</h3>
-						<p>Le “@while” compile des styles jusqu’a ce que l’évalution soit “false”</p>
+						<p>Le “@while” compile des styles jusqu’à ce que l’évalution soit “false”</p>
 					</div>
 
 					<div class="fragment">
@@ -232,7 +231,7 @@
 				<!-- **** Compass & CSS3 **** -->
 				<section>
 					<h2>CSS3</h2>
-					<p>Les mixins pour le CSS3 sont habituellement utilisé pour éviter d’avoir à écrire tous les préfixes des fureteurs. Ils sont utiles aussi pour fournir une solution alternative pour les plus vieux fureteurs.</p>
+					<p>Les mixins pour le CSS3 sont habituellement utilisés pour éviter d’écrire tous les préfixes des fureteurs. Ils sont aussi utiles pour fournir une solution alternative pour les plus vieux fureteurs.</p>
 					<p>Opacity, box-shadow, animations, font-face et plusieurs autres.</p>
 <!-- //Montrer quelques exemple -->
 				</section>
@@ -248,7 +247,7 @@
 				<section>
 					<h2>Typography</h2>
 					<p>Mixins qui permettent de styler plus rapidement certains éléments typographiques.</p>
-					<p>Link effects, lists et textes</p>
+					<p>Link effects, lists, texts</p>
 				</section>
 
 				<section>
