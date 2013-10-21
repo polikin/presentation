@@ -1,0 +1,210 @@
+/**
+* @tags: examples
+*/
+
+.border-radius {
+	@include border-radius(50px);
+}
+
+.border-bottom-right-radius {
+	@include border-bottom-right-radius(30px);
+}
+
+.transition {
+	@include transition(0.3s);
+
+	&:hover { background: $tertiary; };
+}
+
+.transition-delay { 
+	@include transition-delay(1s !important); 
+}
+
+.box-shadow {
+	@include box-shadow($shadow 2px 2px 10px);
+}
+
+.opacity {
+	@include opacity(0.6);
+}
+
+.extend {
+	@extend %placeholder;
+}
+
+.extend2 {
+	@extend %placeholder;
+}
+
+.extend3 {
+	@extend %placeholder;
+}
+
+.image {
+	@include backgroundimage(loop, svg, $bgcolor: $primary);
+}
+
+.primary { background: $primary; }
+
+.secondary { background: $secondary; }
+
+.tertiaire { background: $tertiary; }
+
+.image-resize {
+	position:	relative;
+	
+	&.hover { 
+		background: rgba($primary, 0);
+		
+		code { 
+			color:	red;
+			background:	$white;
+			
+			@include opacity(0); 
+			
+		}	
+		
+		.bckg { @include opacity(1);}
+	}
+	
+	&.not {
+		.bckg { @include opacity(0); }
+	}
+	
+	.output { 
+		font-size:	32px !important;
+		color: red; 
+	}
+	
+	.bckg {
+		$bckg1: bckg1;
+		
+		position:	absolute;
+		
+		display:	block;
+		
+		height:	image-height("#{$bckg1}.jpg");
+		width:	image-width("#{$bckg1}.jpg");
+		
+		background:	image-url("#{$bckg1}.jpg");
+		
+		z-index: -1;
+		
+		@include opacity(0);
+	}
+}
+
+/*****************/
+
+/**
+* @tags: nesting
+*/
+
+.ma-class {
+	
+	background:	$primary;
+	
+	.mon-div {
+		
+		background:	$secondary;
+		
+		.mon-span {
+			background:	$tertiary;
+		}
+	}
+}
+
+/*****************/
+
+/**
+* @tags: @if
+*/
+
+
+.examples-intermediaire { 
+	margin: 0 0 40px 0; 
+	
+	font-size:	40px;
+	
+	text-align:	center;
+}
+
+.if {
+	$if: false;
+	
+	@if $if == true {
+		&:before { 
+			color:	$secondary;
+			content: "$if == true, ce contenu s'affiche"; 
+		}
+	}@else {
+		&:before { 
+			color:	$tertiary;
+			content: "$if == false, ce contenu s'affiche"; 
+		}
+	}
+}
+
+/*****************/
+
+/**
+* @tags: @for
+*/
+
+.for {
+	$width: 100%;
+	
+	@for $i from 0 through 6 {
+		.for-#{$i} {
+			width  : $width/6;
+			height : $i * 20#{px};
+						
+			float:	left;
+			
+			border     : 1px $white solid;
+			background : $secondary;
+			
+			@include borderbox(); 
+			
+			&:before {
+				content: "#{$i * 20}px";
+			}
+		}
+	}
+}
+
+/*****************/
+
+/**
+* @tags: color manipulation
+*/
+
+.primary-lighten { background: lighten($primary, 40) !important; }
+
+.secondary-darken { 
+	background : darken($secondary, 40) !important; 
+	
+	code { color: $white !important; }
+}
+
+.tertiary-complement { background: complement($tertiary) !important; }
+
+/*****************/
+
+/**
+* @tags: compass sprites
+*/
+
+@import "../images/sprites-folder/*.png";
+@include all-sprites-folder-sprites(true);
+
+.sprite {
+	div {
+		margin : 0 29px 0 0;
+		float  : left;
+		
+		&:last-child { margin-right: 0; };
+	}
+}
+
+/*****************/

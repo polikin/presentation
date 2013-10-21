@@ -1,0 +1,49 @@
+/**
+* These styles are written and built with sass, compass mixins and susy framework. If you have any questions about how to use sass/compass or susy, please refer to those links:
+* http://sass-lang.com/tutorial.html || http://thesassway.com/
+* http://compass-style.org/help/
+* http://susy.oddbird.net/guides/reference/
+*
+* Preprocessor App for PC & MAC || Note: This project was compiled with Codekit
+*
+* Prepros || http://alphapixels.com/prepros/ || PC & MAC
+* Codekit || http://incident57.com/codekit/ || MAC only
+*
+* Contact Nicolas by email after reading the sass, compass and Susy docs if you still have issues.
+* Email: nic@locomotive.ca
+*/
+
+/*****************/
+
+/**	Core function
+* @tags: mixins
+* @file: compass mixins + _core.functions | http://compass-style.org/reference/compass/ | http://polikin.github.io/core/ 
+*/
+@import "compass/css3";
+@import "compass/reset";
+@import "libs/_core";
+
+/*****************/
+
+/**
+* @tags: project colors || primary, secondary, tertiaire
+*/
+@import "_colors";
+
+/*****************/
+
+/**
+* @tags: base component
+*/
+@import "_sass-var";
+
+/*****************/
+
+/**
+* @tags: project styles
+*/
+@import "_sass-screen";
+
+/*****************/
+
+//@import "_examples";
