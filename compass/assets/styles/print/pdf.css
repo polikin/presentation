@@ -192,3 +192,5 @@ ul, ol, div, p {
 .reveal pre code { 
 	font-size: 12px;
 }
+
+.reveal h3 { font-size: 1em;}

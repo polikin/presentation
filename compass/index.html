@@ -663,6 +663,42 @@ $var: false;
 					</ul>
 				</section>
 				
+				<!-- **** Apps **** -->
+				
+				<section>
+					<h2>Apps</h2>
+					<ul>
+						<li>Codekit</li>
+						<li>Prepros</li>
+						<li>Mixture</li>
+						<li>Koala</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Codekit (mac seulement)</h2>
+					<br>
+					
+					<a href="http://incident57.com/codekit/">http://incident57.com/codekit/</a>
+					
+					<br>
+					
+					<img class="blank" src="assets/images/logo-codekit.png" alt="">
+					
+				</section>
+				
+				<section>
+					<h2>Prepros (mac & pc)</h2>
+					<br>
+					
+					<a href="http://alphapixels.com/prepros/">http://alphapixels.com/prepros/</a>
+					
+					<br>
+					
+					<img class="blank" src="assets/images/logo-prepros.png" alt="">
+					
+				</section>
+				
 				<section>
 					<div class="author">
 						<p>Nicolas Poliquin</p>
@@ -681,7 +717,10 @@ $var: false;
 					<div style="clear:both;"></div>
 					
 					<div class="credits">
-						<span>Crédits</span>
+						
+						<br>
+						
+						<h5>Crédits</h5>
 						<a href="http://compass-style.org/help/">Compass</a>
 						<a href="http://sass-lang.com/tutorial.html">Sass</a>
 						<a href="http://thesassway.com/">The Sass Way</a>
@@ -707,7 +746,8 @@ $var: false;
 				history: true,
 				center: true,
 				width: 1400,
-
+				mouseWheel: true,
+				loop: true,
 				theme: Reveal.getQueryHash().theme, 
 				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
 
@@ -731,7 +771,10 @@ $var: false;
 								});
 						} 
 					},
-				]
+				],
+				keyboard: {
+				    13: 'toggleOverview' // go to the next slide when the ENTER key is pressed
+				  }
 			});
 
 		</script>
