@@ -30,20 +30,6 @@
 		<div class="reveal">
 
 			<div class="slides">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 				<!-- **** @home **** -->
 				<section>
 					<img class="blank" src="assets/images/sass-compass-logo.png" alt="">
@@ -58,17 +44,22 @@
 
 				<section>
 					<h2>Les préprocesseurs les plus utilisés</h2>
+					<br>
 					<div class="fragment">
 						<h3>SASS</h3>
 						<p>Foundation (framework)<br>
 						Compass (framework)</p>
 					</div>
+					
+					<br>
 
 					<div class="fragment">
 						<h3>LESS</h3>
 						<p>Twitter Bootstrap (framework)</p>
 					</div>
-
+					
+					<br>
+					
 					<div class="fragment">
 						<h3>Stylus</h3>
 						<p>Nib (framework)</p>
@@ -87,30 +78,186 @@
 //Expliquer la différence entre @import “fichier” et @import “_fichier”
  -->
 				</section>
+				
+				<section>
+					<h2>Importation (@import) suite</h2>
+					
+					<pre>
+						<code data-trim>
+/* import sans le "_" */
+@import "le_fichier_importe";
+
+/* import avec le "_" */
+@import "_le_fichier_importe";							
+						</code>
+					</pre>
+					
+					<img class="blank" src="assets/images/img-import.png" alt="">
+					
+				</section>
+				
+				<section>
+					<h2>Importation (@import) suite</h2>
+					
+					<br>
+					
+					<h3 class="primary">différence entre les deux façons d'importer</h3>
+					
+					<div class="fragment">
+						<p>importer un fichier <span class="highlight">sans</span> le <span class="highlight">"_"</span> indique que ce fichier doit être généré en <span class="highlight">.css</span></p>
+					</div>
+					
+					<br>
+					
+					<div class="fragment">
+						<p>importer un fichier <span class="highlight">avec</span> le <span class="highlight">"_"</span> indique que ce fichier doit être importé dans le fichier compilé</p>
+					</div>
+					
+				</section>
+				
+				<section>
+					<h2>Importation (@import) suite</h2>
+					
+					<br>
+					
+					<h3 class="primary">@import dans un sélecteur</h3>
+					
+					<pre>
+						<code data-trim>
+.maclass {
+	@import "_le_fichier_importe";
+}
+							
+						</code>
+					</pre>
+					
+					
+				</section>
 
 				<!-- **** Nesting **** -->
 				<section>
 					<h2>Indentation</h2>
+					
+					<br>
+					
 					<div class="fragment">
-						<h3>Indentation des selecteurs</h3>
+						<h3 class="primary">Indentation des selecteurs</h3>
 						<p>Les selecteurs CSS peuvent être indentés.</p>
 					</div>
-<!-- //Montrer exemple de base sur le nesting -->
+					
+					<br>
+					<!-- //Montrer exemple de base sur le nesting -->
 
 					<div class="fragment">
-						<h3>Indentation des propriétés</h3>
+						<h3 class="primary">Indentation des propriétés</h3>
 						<p>Certaines propriétés avec le même nom peuvent être indentées</p>
 					</div>
-<!-- //Montrer exemple avec fonts (font-size, font-weight, font-family etc) -->
+					
+					<br>
+					
+					<!-- //Montrer exemple avec fonts (font-size, font-weight, font-family etc) -->
 
 					<div class="fragment">
-						<h3>Le selecteur parent</h3>
+						<h3 class="primary">Le selecteur parent</h3>
 						<p>L’utilisation du symbole “&” fait référence au parent.</p>
 					</div>
-<!-- 
-//Montrer exemple du sélecteur parent
-//Exemple avec modernizr -->
+					<!-- 
+					//Montrer exemple du sélecteur parent
+					//Exemple avec modernizr -->
 
+				</section>
+				
+				<section>
+					<h2>Indentation (suite)</h2>
+					
+					<br>
+					
+					<h3 class="primary">Indentation des sélecteurs</h3>
+					
+					<br>					
+					
+					<pre>
+						<code data-trim>
+.ma-classe-parent {
+	.ma-classe-enfant {
+		strong {
+			color: black;
+		}
+	}
+}
+
+/* CSS GÉNÉRÉ */
+.ma-class-parent .ma-class-enfant strong { color: black; }
+						</code>
+					</pre>
+					
+					<p>* Ne pas dépasser 3 niveaux d'indentation</p>
+				</section>
+				
+				<section>
+					<h2>Indentation (suite)</h2>
+					
+					<br>
+					
+					<h3 class="primary">indentation des propriétés</h3>
+					
+					
+					<pre>
+						<code data-trim>
+.ma-class-parent {
+	font:{
+		size: 12px;
+		weight: 700;
+		style: italic;
+	}
+	
+	background:{
+		position: top left;
+		repeat: no-repeat;
+		color: #ccc;
+	}
+}
+
+/* CSS GÉNÉRÉ */
+.ma-class-parent {
+	font-size: 12px;
+	font-weight: 700;
+	font-style: italic;
+	
+	background-position: top left;
+	background-repeat: no-repeat;
+	background-color: #ccc;
+}
+
+						</code>
+					</pre>					
+				</section>
+				
+				<section>
+					<h2>Indentation (suite)</h2>
+					
+					<br>
+					
+					<h3 class="primary">sélecteur parent ( & )</h3>
+					
+					<pre>
+						<code data-trim>
+.ma-class-parent {
+	.ma-classe-enfant {
+		.touch & {
+			color: black;
+		}
+	}
+}
+
+/* CSS GÉNÉRÉ */
+.touch .ma-class-parent .ma-class-enfant { color: black; }
+
+						</code>
+					</pre>
+					
+					<p>* .touch est une fonctionnalité de Modernizr</p>
+										
 				</section>
 
 
@@ -119,30 +266,99 @@
 					<h2>Variables</h2>
 					<p>La façon la plus simple d’utiliser SASS est l’utilisation des variables.</p>
 					<p>Les variables commencent avec le signe “$” et sont déclarés comme des propriétés.</p>
-					<p>“$nom :  valeur”</p>
+					<p class="primary">“$nom :  valeur”</p>
 					<p>Les utilisations les plus fréquentes sont les chiffres, les couleurs et les fonts.</p>
 <!-- //Montrer le fichier avec toutes les variables et sont utilisation -->
+				</section>
+				
+				<section>
+					<h2>variables (suite)</h2>
+					
+					<pre>
+						<code data-trim>
+$primary:	#1abc9c; /* turquoise */
+
+$secondary:	#8E44AD; /* emerald */
+
+$tertiary:	#3498db; /* peter river /*	
+
+$hover:	$secondary;		
+
+$family: 'Open sans', serif;
+
+$margin: 10px 20px;				
+						</code>
+					</pre>
+					
 				</section>
 
 
 				<!-- **** Mixins **** -->
 				<section>
 					<h2>@mixins</h2>
-
+					
+					<br>
+					
 					<div class="fragment">
-						<h3>Définition</h3>
+						<h3 class="primary">Définition</h3>
 						<p>Les mixins servent à définir des styles qui sont utilisés à plusieurs endroits. Les mixins acceptent aussi des arguments, ce qui permet de produire une plus grande variété de styles.</p>
 						<p>Nous utilisons “@mixin” pour définir une mixin.</p>
 					</div>
-
+					
+					<br>
+					
 					<div class="fragment">
-						<h3>Utilisation</h3>
+						<h3 class="primary">Utilisation</h3>
 						<p>Nous utilisons “@include” pour inclure tous les styles retournés par la mixin. </p>
 					</div>
 <!-- //Montrer un exemple de mixin de base -->
 
 				</section>
+				
+				<section>
+					<h2>@mixins (suite)</h2>
+					
+					<pre>
+						<code data-trim>
+@mixin circle($circle-size, $color) {
+	width: 		$circle-size; 
+	height: 	$circle-size; 
+	background:	$color;
 
+	@include border-radius($circle-size/2);
+}		
+						</code>
+					</pre>
+					
+				</section>
+				
+				<section>
+					<h2>@include</h2>
+					
+					<pre>
+						<code data-trim>
+/* APPELÉ LE MIXIN */
+.circle {
+	@include circle(200px, red);
+}
+							
+/* CSS GÉNÉRÉ */
+.circle {
+	width: 200px;
+	height: 200px;
+	background: red;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	-ms-border-radius: 100px;
+	-o-border-radius: 100px;
+	border-radius: 100px;
+}			
+						</code>
+					</pre>					
+					<div class="circle"></div>
+					
+				</section>
+				
 				<!-- **** Mixins **** -->
 				<section>
 					<h2>@extend</h2>
@@ -152,6 +368,40 @@
 <!-- //Montrer un exemple de base de @extend -->
 					<a href="http://krasimirtsonev.com/blog/article/SASS-mixins-extends-and-placeholders-differences-use-cases">Different use cases</a>
 
+				</section>
+				
+				<section>
+					<h2>@extend (suite)</h2>
+					
+					<br>
+					
+					<h3 class="primary">extend %placeholder</h3>
+					
+					<pre>
+						<code data-trim>
+%border-bottom {
+	padding: 0 0 30px 0;
+	border-bottom: 2px blue solid;
+}		
+
+.ma-classe {
+	@extend %border-bottom;
+}
+
+.mon-autre-classe {
+	@extend %border-bottom;
+}
+
+/* CSS GÉNÉRÉ */
+.ma-classe, .mon-autre-classe {
+	padding: 0 0 30px 0;
+	border-bottom: 2px blue solid
+}
+						</code>
+					</pre>
+					
+					<p>* le placeholder n'est pas compilé dans le .css final</p>
+					
 				</section>
 
 
@@ -166,59 +416,177 @@
 						<p>percentage, round, ceil, floor, abs, min, max et plusieurs autres.</p>
 					</div>
 				</section>
+				
+				<section>
+					<h2>Mathématiques (suite)</h2>
+					
+					<br>
+					
+					<h3 class="primary">Les opérations mathématique (+, -, *, /, %)</h3>
+					
+					<pre>
+						<code data-trim>
+1em + 1em; /* 2em */
+
+1em - 1em; /* 0em */
+
+1in + 72pt; /* 2in */
+
+6px * 4; /* 24px /*
+
+18 % 5; /* 3 */
+
+						</code>
+					</pre>
+					
+				</section>
 
 				<!-- **** Colors **** -->
 				<section>
 					<h2>Couleurs</h2>
-					<p>Il est possible de faire des calculs avec les couleurs. Les opérations sont appliquées sur le canal rouge, vert et bleu.</p>
+					<p>Il est possible de faire des calculs avec les couleurs.<br/>Les opérations sont appliquées sur le canal rouge, vert et bleu.</p>
 					<p>Plusieurs fonctions sont disponibles dans SASS</p>
 					<p>rgb, rgba, red, green, blue, mix, hue, saturation, lightness, lighten, darken, saturate, desaturate, greyscale, complement, invert, alpha, rgba et plusieurs autres.</p>
 <!-- //Montrer quelques exemples de fonctions de couleurs -->
+				</section>
+				
+				<section>					
+					<h2>couleurs (suite)</h2>
+					
+					<br>
+					
+					<h3 class="primary">lighten, darken, rgba</h3>
+					<pre>
+						<code data-trim>
+.lighten {
+	background: lighten($primary, 10);
+}
+
+.darken {
+	background: darken($primary, 10);
+}
+
+.rgba {
+	background: rgba($primary, 10);
+}
+
+						</code>
+					</pre>
+				</section>
+				
+				<section>					
+					<h2>couleurs (suite)</h2>
+					<img class="blank" src="assets/images/img-colors.jpg" alt="">
+				</section>
+				
+				<section>					
+					<h2>couleurs (suite)</h2>
+					<img class="blank" src="assets/images/img-colors2.jpg" alt="">
 				</section>
 
 
 				<!-- **** Directives **** -->
 				<section>
 					<h2>Directives</h2>
-
-					<h3>@import</h3>
+					
+					<br>
+					
+					<div class="fragment">
+						<h3 class="primary">@import</h3>
+					</div>
+					
+					<br>
 
 					<div class="fragment">
-						<h3>@media</h3>
+						<h3 class="primary">@media</h3>
 						<p>L’utilisation du “@media” est la même qu’en CSS sauf à l’exception qu’elle peut être imbriqué dans les selecteurs.</p>
 <!-- //Montrer une utilisation du @media -->
 					</div>
+					
+					<br>
 
 					<div class="fragment">
-						<h3>@extend</h3>
+						<h3 class="primary">@extend</h3>
 					</div>
+					
+					<br>
 
 					<div class="fragment">
-						<h3>@if</h3>
+						<h3 class="primary">@if</h3>
 						<p>Permet d’utiliser des “@if, @else if, @else” dans toutes les directives.</p>
 					</div>
 				</section>
 
 				<section>
 					<h2>Directives (suite)</h2>
-					<h3>@for</h3>
+					<h3 class="primary">@for</h3>
 					<p>La déclaration du “@for” compile des styles de manière répétitive avec un compteur pour chaque itération.</p>
 <!-- //Montrer un exemple du @for -->
-
+					
+					<br>
+					
 					<div class="fragment">
-						<h3>@each</h3>
+						<h3 class="primary">@each</h3>
 						<p>Le “@each” compile des styles pour chaque valeurs dans un tableau</p>
 <!-- //Montrer un exemple du @each -->
 					</div>
+					
+					<br>
 
 					<div class="fragment">
-						<h3>@while</h3>
+						<h3 class="primary">@while</h3>
 						<p>Le “@while” compile des styles jusqu’à ce que l’évalution soit “false”</p>
 					</div>
+					
+					<br>
 
 					<div class="fragment">
-						<h3>@mixin</h3>
+						<h3 class="primary">@mixin</h3>
 					</div>
+				</section>
+				
+				<section>
+					<h2>directives (suite)</h2>
+					
+					<br>
+					
+					<h3 class="primary">@if, @else</h3>
+					<pre>
+						<code data-trim>
+$var: false;
+
+@if $var == true {
+	&:before { 
+		color:	$secondary;
+		content: "$var == true, ce contenu s'affiche"; 
+	}
+}@else {
+	&:before { 
+		color:	$tertiary;
+		content: "$var == false, ce contenu s'affiche"; 
+	}
+}
+						</code>
+					</pre>
+				</section>
+				
+				<section>
+					<h2>directives (suite)</h2>
+					
+					<br>
+					
+					<h3 class="primary">@for</h3>
+					<pre>
+						<code data-trim>
+@for $i from 0 through 6 {
+	.for-#{$i} {
+		height : $i * 20#{px};
+	}
+}
+
+						</code>
+					</pre>
+					
 				</section>
 
 
@@ -263,573 +631,36 @@
 						<li>Susy</li>
 						<li>h5bp</li>
 						<li>rgba-png</li>
-						<li>...</li>
-					</ul>
-				</section>
-
-
-
-
-
-
-
-
-
-
-				<!-- **** @sprite **** -->
-				<section>
-					<h2>compass sprite</h2>
-
-					<pre>
-						<code data-trim>
-@import "../images/sprites-folder/*.png";
-@include all-sprites-folder-sprites(true);
-
-/* CSS GÉNÉRÉ */
-.sprites-folder-sprite, 
-.sprites-folder-book, 
-.sprites-folder-calendar, 
-.sprites-folder-chat, ... {
-	background: url('../images/sprites-folder-sf54b147fa4.png') no-repeat;
-}
-
-.sprites-folder-book {
-	background-position: 0 -823px;
-	height: 200px;
-	width: 200px;
-}
-
-.sprites-folder-calendar {
-	background-position: 0 -223px;
-	height: 200px;
-	width: 200px;
-}
-
-.sprites-folder-chat {
-	background-position: 0 -423px;
-	height: 200px;
-	width: 200px;
-}
-						</code>
-					</pre>
-				</section>
-				
-				<section>
-					<h2>images générés</h2>
-					
-					<img src="assets/images/compass-sprite-output.png" alt="">
-				</section>
-				
-				<!-- **** @import **** -->
-				
-				<section>
-					<h2>importé un fichier .scss</h2>
-					
-					<pre>
-						<code data-trim>
-/* import sans le "_" */
-@import "le_fichier_importe";
-
-/* import avec le "_" */
-@import "_le_fichier_importe";							
-						</code>
-					</pre>
-					
-					<img class="blank" src="assets/images/img-import.png" alt="">
-					
-				</section>
-				
-				<section>
-					<h2>différence entre les deux façons d'importer</h2>
-					
-					<div class="fragment">
-						<h5 class="primary">importer un fichier <span class="highlight">sans</span> le <span class="highlight">"_"</span> indique que ce fichier doit être généré en <span class="highlight">.css</span></h5>
-						<p>fichier généré: le_fichier_importe.css</p>
-					</div>
-					
-					<br>
-					
-					<div class="fragment">
-						<h5 class="primary">importer un fichier <span class="highlight">avec</span> le <span class="highlight">"_"</span> indique que ce fichier doit être importé dans le fichier compilé</h5>
-					</div>
-					
-				</section>
-				
-				<section>
-					<h2>faire un @import dans un sélecteur</h2>
-					
-					<pre>
-						<code data-trim>
-.maclass {
-	@import "_le_fichier_importe";
-}
-							
-						</code>
-					</pre>
-					
-					
-				</section>
-				
-				<!-- **** @nesting **** -->
-				
-				<section>
-					<h2>nesting (indentation)</h2>
-					
-					<ul>
-						<li>sélecteurs</li>
-						<li>propriété</li>
-						<li>sélecteur parent (&)</li>
-						<li>.class, #id, :hover, pseudo-element</li>
-					</ul>
-					
-				</section>
-				
-				<section>
-					<h2>nesting (indentation)</h2>
-					
-					<pre>
-						<code data-trim>
-.ma-classe-parent {
-	.ma-classe-enfant {
-		strong {
-			color: black;
-		}
-	}
-}
-
-/* CSS GÉNÉRÉ */
-.ma-class-parent .ma-class-enfant strong { color: black; }
-						</code>
-					</pre>
-					
-					<p>* Ne pas dépasser 3 niveaux d'indentation</p>
-					
-				</section>
-				
-				<section>
-					<h2>nesting (.class)</h2>
-					
-					<pre>
-						<code data-trim>
-.ma-class-parent {
-	.ma-classe-enfant {
-		&.nouvelleclass {
-			color: black;
-		}
-		
-		&:hover {
-			color: red;
-		}
-	}
-}
-
-/* CSS GÉNÉRÉ */
-.ma-class-parent .ma-class-enfant.nouvelleclass { color: black; }
-
-						</code>
-					</pre>					
-				</section>
-				
-				<section>
-					<h2>nesting (indentation) - <span class="highlight">à ne pas faire</span></h2>
-					
-					<pre>
-						<code data-trim>
-.ma-classe-parent {
-	.ma-classe-enfant {
-		span {
-			a {
-				strong {
-					color: black;
-				}
-			}
-		}
-	}
-}
-						</code>
-					</pre>
-					
-				</section>
-				
-				<section>
-					<h2>nesting (& parent)</h2>
-					
-					<pre>
-						<code data-trim>
-.ma-class-parent {
-	.ma-classe-enfant {
-		.touch & {
-			color: black;
-		}
-	}
-}
-
-/* CSS GÉNÉRÉ */
-.touch.ma-class-parent.ma-class-enfant { color: black; }
-
-						</code>
-					</pre>
-					
-					<p>* .touch est une fonctionnalité de Modernizr</p>
-										
-				</section>
-				
-				<!-- **** @variable **** -->
-				
-				<section>
-					<h2>variables</h2>
-					
-					<pre>
-						<code data-trim>
-$primary:	#1abc9c; /* turquoise */
-
-$secondary:	#8E44AD; /* emerald */
-
-$tertiary:	#3498db; /* peter river */	
-
-$hover:	$secondary;		
-
-$family: 'Open sans', serif;
-
-$margin: 10px 20px;				
-						</code>
-					</pre>
-					
-				</section>
-				
-				<!-- **** @mixins **** -->
-				
-				<section>
-					<h2>mixins</h2>
-					
-					<pre>
-						<code data-trim>
-@mixin circle($circle-size, $color) {
-	width: 		$circle-size; 
-	height: 	$circle-size; 
-	background:	$color;
-
-	@include border-radius($circle-size/2);
-}		
-						</code>
-					</pre>
-					
-				</section>
-				
-				<section>
-					<h2>@include</h2>
-					
-					<pre>
-						<code data-trim>
-/* APPELÉ LE MIXIN */
-.circle {
-	@include circle(200px, red);
-}
-							
-/* CSS GÉNÉRÉ */
-.circle {
-	width: 200px;
-	height: 200px;
-	background: red;
-	-webkit-border-radius: 100px;
-	-moz-border-radius: 100px;
-	-ms-border-radius: 100px;
-	-o-border-radius: 100px;
-	border-radius: 100px;
-}			
-						</code>
-					</pre>					
-					<div class="circle"></div>
-					
-				</section>
-				
-				<!-- **** @extend **** -->
-				
-				<section>
-					<h2>@extend</h2>
-					
-					<ul>
-						<li>placeholder</li>
-						<li>classe</li>
-					</ul>
-					
-				</section>
-				
-				<section>
-					<h2>extend placeholder</h2>
-					
-					<pre>
-						<code data-trim>
-%border-bottom {
-	padding: 0 0 30px 0;
-	border-bottom: 2px blue solid;
-}		
-
-.ma-classe {
-	@extend %border-bottom;
-}
-
-.mon-autre-classe {
-	@extend %border-bottom;
-}
-
-/* CSS GÉNÉRÉ */
-.ma-classe, .mon-autre-classe {
-	padding: 0 0 30px 0;
-	border-bottom: 2px blue solid
-}
-						</code>
-					</pre>
-					
-					<p>* le placeholder n'est pas compilé dans le .css final</p>
-					
-				</section>
-				
-				<section>
-					<h2>extend class</h2>
-					
-					<pre>
-						<code data-trim>
-
-.ma-classe {
-	padding: 0 0 30px 0;
-	border-bottom: 2px blue solid;
-}
-
-.mon-autre-classe {
-	@extend .ma-classe;
-}
-
-/* CSS GÉNÉRÉ */
-.ma-classe, .mon-autre-classe {
-	padding: 0 0 30px 0;
-	border-bottom: 2px blue solid
-}
-						</code>
-					</pre>
-					
-				</section>
-				
-				<!-- **** @mathematique **** -->
-				<section>
-					<h2>calcul mathématique</h2>
-					<ul>
-						<li>(+, -, *, /, %)</li>
-						<li>fonctions</li>
-						<li>opérateurs</li>
-						<li>comparaison</li>
-					</ul>
-				</section>
-				
-				
-				<section>
-					<h2>calcul mathématique</h2>
-					
-					<p>Les opérations mathématique (+, -, *, /, %)</p>
-					
-					<pre>
-						<code data-trim>
-1em + 1em; /* 2em */
-
-1em - 1em; /* 0em */
-
-1in + 72pt; /* 2in */
-
-6px * 4; /* 24px /*
-
-18 % 5; /* 3 */
-
-						</code>
-					</pre>
-					
-				</section>
-				
-				<section>					
-					<h2>calcul mathématique</h2>
-					<pre>
-						<code data-trim>
-$container : 960px;
-$main : 680px;
-$gutter : 30px;
-
-.sidebar {
-	width: $container - $main - $gutter;
-}
-
-/* CSS GÉNÉRÉ */
-.sidebar { width: 250px;}
-
-						</code>
-					</pre>
-					
-				</section>
-				
-				<section>					
-					<h2>calcul mathématique</h2>
-					<p>fonctions</p>
-					<pre>
-						<code data-trim>
-percentage(13/25) /* 52% */
-
-round(2.4) /* 2 */
-
-ceil(2.2) /* 3 */
-
-floor(2.6) /* 2 */
-
-abs(-24) /* 24 */
-
-						</code>
-					</pre>
-					
-				</section>
-				
-				<section>					
-					<h2>calcul mathématique</h2>
-					<p>opérateurs (<, >, <=, >=)</p>
-					<pre>
-						<code data-trim>
-1 < 20 /* true */
-
-10 <= 20 /* true */
-
-4 > 1 /* true */
-
-4 >= 1 /* true */
-
-						</code>
-					</pre>
-					
-					<p>comparaison</p>
-					<pre>
-						<code data-trim>
-1 + 1 == 2 /* true */
-						</code>
-					</pre>
-				</section>
-				
-				<section>					
-					<h2>calcul mathématique</h2>
-					<p>conditions</p>
-					<pre>
-						<code data-trim>
-1 < 20 /* true */
-
-10 <= 20 /* true */
-
-4 > 1 /* true */
-
-4 >= 1 /* true */
-
-						</code>
-					</pre>
-				</section>
-				
-				<!-- **** @couleurs **** -->
-				
-				<section>					
-					<h2>couleurs</h2>
-					<ul>
-						<li>lighten</li>
-						<li>darken</li>
-						<li>rgba</li>
-						<li>greyscale</li>
-						<li>change-color</li>
-						<li>adjust-color</li>
+						<li>ceaser</li>
+						<li>animate.sass</li>
 						<li>etc ...</li>
 					</ul>
 				</section>
 				
-				<section>					
-					<h2>couleurs</h2>
-					<p>lighten, darken, rgba</p>
-					<pre>
-						<code data-trim>
-.lighten {
-	background: lighten($primary, 10);
-}
-
-.darken {
-	background: darken($primary, 10);
-}
-
-.rgba {
-	background: rgba($primary, 10);
-}
-
-						</code>
-					</pre>
-				</section>
-				
-				<section>					
-					<h2>couleurs</h2>
-					<img class="blank" src="assets/images/img-colors.jpg" alt="">
-				</section>
-				
-				<section>					
-					<h2>couleurs</h2>
-					<img class="blank" src="assets/images/img-colors2.jpg" alt="">
-				</section>
-				
-				<!-- **** @directive **** -->
-				
 				<section>
-					<h2>directive</h2>
-					<p>@if, @else</p>
-					<pre>
-						<code data-trim>
-.if {
-	$if: false;
-
-	@if $if == true {
-		&:before { 
-			color:	$secondary;
-			content: "$if == true, ce contenu s'affiche"; 
-		}
-	}@else {
-		&:before { 
-			color:	$tertiary;
-			content: "$if == false, ce contenu s'affiche"; 
-		}
-	}
-}
-						</code>
-					</pre>
-				</section>
-				
-				<section>
-					<h2>directive</h2>
-					<p>@for</p>
-					<pre>
-						<code data-trim>
-.for {
-	@for $i from 0 through 6 {
-		.for-#{$i} {
-			height : $i * 20#{px};
-
-			&:before {
-				content: "#{$i * 20}px";
-			}
-		}
-	}
-}
-						</code>
-					</pre>
-				</section>
-				
-				<!-- **** @compass **** -->
-				
-				<section>
-					<h2>compass</h2>
-					<ul>
-						<li>CSS3</li>
-						<li>Compass Helpers</li>
-						<li>Typography</li>
-						<li>Utilities</li>
-						<li>Extensions</li>
-					</ul>
-				</section>
+					<div class="author">
+						<p>Nicolas Poliquin</p>
+						<p>Twitter: <a href="https://twitter.com/_polikin" target="_blank">@_polikin</a></p>
+						<p>Github: <a href="https://github.com/polikin" target="_blank">https://github.com/polikin</a></p>
+						<p>Courriel: <a href="mailto:nic@polikin.ca?subject=Question presentation Compass" target="_blank">nic@polikin.ca</a></p>
+					</div>
 					
+					<div class="author">
+						<p>Mathieu Rivest</p>
+						<p>Courriel: <a href="mailto:rivest.mathieu@gmail.com?subject=Question presentation Compass" target="_blank">rivest.mathieu@gmail.com</a></p>
+					</div>
+					
+					<div style="clear:both;"></div>
+					
+					<div class="credits">
+						<span>Crédits</span>
+						<a href="http://compass-style.org/help/">Compass</a>
+						<a href="http://sass-lang.com/tutorial.html">Sass</a>
+						<a href="http://thesassway.com/">The Sass Way</a>
+						<a href="https://speakerdeck.com/imathis/sass-compass-the-future-of-stylesheets-now">Brandon Mathis</a>
+						<a href="http://blog.humancoders.com/les-id-es-re-ues-sur-les-pr-processeurs-css-sass-53/">Camille Roux</a>
+					</div>
+				</section>
 				
 			</div>
 
