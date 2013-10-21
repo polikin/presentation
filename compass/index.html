@@ -6,9 +6,9 @@
 <!--[if gt IE 9]><!--> <html class="gt-ie"> <!--<![endif]-->
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-	
+
 		<title>Présentation Compass</title>
-				
+
 		<link rel="stylesheet" href="assets/styles/reveal.css">
 		<link rel="stylesheet" href="assets/styles/night.css" id="theme">
 
@@ -23,31 +23,266 @@
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
-		
-		
-		
-		
-		
-	</head>	
+
+	</head>
 	<body>
 
 		<div class="reveal">
 
 			<div class="slides">
-				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 				<!-- **** @home **** -->
-				
 				<section>
 					<img class="blank" src="assets/images/sass-compass-logo.png" alt="">
 				</section>
-				
+
+
+				<!-- **** Intro preprocessor **** -->
+				<section>
+					<h2>Qu’est-ce qu’un préprocesseur CSS?</h2>
+					<p>C’est un outil permettant de transformer un langage (avec une syntaxe semblable à CSS), en CSS valide. La syntaxe du langage est souvent tellement proche de celle du CSS qu’on voit à peine la différence. Les préprocesseurs apportent une aide à l’écriture de vos feuilles de styles. Aujourd’hui, les deux préprocesseurs les plus utilisés sont Sass et Less.</p>
+				</section>
+
+				<section>
+					<h2>Les préprocesseurs les plus utilisés</h2>
+					<div class="fragment">
+						<h3>SASS</h3>
+						<p>Foundation (framework)<br>
+						Compass (framework)</p>
+					</div>
+
+					<div class="fragment">
+						<h3>LESS</h3>
+						<p>Twitter Bootstrap (framework)</p>
+					</div>
+
+					<div class="fragment">
+						<h3>Stylus</h3>
+						<p>Nib (framework)</p>
+					</div>
+				</section>
+
+
+				<!-- **** @import **** -->
+				<section>
+					<h2>Importation</h2>
+					<p>Éviter la règle CSS “@import’’</p>
+					<p>Le “@import” des fichiers .scss se produit lors de la compilation au lieu du coté client.</p>
+<!-- 
+//Montrer le fichier main.scss avec toutes les imports
+//Montrer lles fichiers importés et compilés
+//Expliquer la différence entre @import “fichier” et @import “_fichier”
+ -->
+				</section>
+
+				<!-- **** Nesting **** -->
+				<section>
+					<h2>Indentation</h2>
+					<div class="fragment">
+						<h3>Indentation des selecteurs</h3>
+						<p>Les selecteurs CSS peuvent être indentes.</p>
+					</div>
+<!-- //Montrer exemple de base sur le nesting -->
+
+					<div class="fragment">
+						<h3>Indentation des propriétés</h3>
+						<p>Certaines propriétés avec le même nom peuvent être indentées</p>
+					</div>
+<!-- //Montrer exemple avec fonts (font-size, font-weight, font-family etc) -->
+
+					<div class="fragment">
+						<h3>Le selecteur parent</h3>
+						<p>L’utilisation du symbole “&” fait référence au parent.</p>
+					</div>
+<!-- 
+//Montrer exemple du sélecteur parent
+//Exemple avec modernizr -->
+
+				</section>
+
+
+				<!-- **** Variables **** -->
+				<section>
+					<h2>Variables</h2>
+					<p>La façon la plus simple d’utiliser SASS est l’utilisation des variables.</p>
+					<p>Les variables commencent avec le signe “$” et sont déclarés comme des propriétés.</p>
+					<p>“$nom :  valeur”</p>
+					<p>Les utilisations les plus fréquentes sont les chiffres, les couleurs et les fonts.</p>
+<!-- //Montrer le fichier avec toutes les variables et sont utilisation -->
+				</section>
+
+
+				<!-- **** Mixins **** -->
+				<section>
+					<h2>Mixins</h2>
+
+					<div class="fragment">
+						<h3>Définition</h3>
+						<p>Les mixins servent à définir des styles qui sont utilisés à plusieurs endroits. Les mixins acceptent aussi des arguments ce qui permet de produire une plus grande variété de styles.</p>
+						<p>Nous utilisons “@mixin” pour définir une mixin.</p>
+					</div>
+
+					<div class="fragment">
+						<h3>Utilisation</h3>
+						<p>Nous utilisons “@include” pour inclure tous les styles retournés par la mixin. </p>
+					</div>
+<!-- //Montrer un exemple de mixin de base -->
+
+				</section>
+
+				<!-- **** Mixins **** -->
+				<section>
+					<h2>Extend</h2>
+					<p>Nous voulons souvent utiliser les même styles mais avec une légère différence. La façon la plus fréquente est d’utiliser une classe plus spécifique.</p>
+					<p>Avec SASS, la maintenance est beaucoup plus facile et cela permet d’éviter certaines erreurs.</p>
+					<p>Nous utilisons “@extend .classe” réutiliser les styles d’un selecteur sans avoir à tout dupliquer.</p>
+<!-- //Montrer un exemple de base de @extend -->
+					<a href="http://krasimirtsonev.com/blog/article/SASS-mixins-extends-and-placeholders-differences-use-cases">Different use cases</a>
+
+				</section>
+
+
+				<!-- **** Maths **** -->
+				<section>
+					<h2>Mathématiques</h2>
+					<p>Sass supporte les operateurs standard</p>
+					<p>+ - * / %</p>
+<!-- //exemples de math simple -->
+					<div class="fragment">
+						<p>Plusieurs fonctions sont disponibles.</p>
+						<p>percentage, round, ceil, floor, abs, min, max et plusieurs autres.</p>
+					</div>
+				</section>
+
+				<!-- **** Colors **** -->
+				<section>
+					<h2>Couleurs</h2>
+					<p>Il est possible de faire des calculs avec les couleurs. Les opérations sont faites sur le canal rouge, vert et bleu.</p>
+					<p>Il est suggérer d’utiliser les fonctions de couleurs.</p>
+					<p>rgb, rgba, red, green, blue, mix, hue, saturation, lightness, lighten, darken, saturate, desaturate, greyscale, complement, invert, alpha, rgba et plusieurs autres.</p>
+<!-- //Montrer quelques exemples de fonctions de couleurs -->
+				</section>
+
+
+				<!-- **** Directives **** -->
+				<section>
+					<h2>Directives</h2>
+
+					<h3>@import</h3>
+
+
+					<div class="fragment">
+						<h3>@media</h3>
+						<p>L’utilisation du “@media” est la même qu’en CSS sauf à l’exception qu’elle peut être imbriqué dans les selecteurs.</p>
+<!-- //Montrer une utilisation du @media -->
+					</div>
+
+					<div class="fragment">
+						<h3>@extend</h3>
+					</div>
+
+					<div class="fragment">
+						<h3>@if</h3>
+						<p>Permet d’utiliser des “@if, @else if, @else” dans toutes les directives.</p>
+					</div>
+				</section>
+
+				<section>
+					<h2>Directives (suite)</h2>
+					<h3>@for</h3>
+					<p>La déclaration du “@for” compile des styles de manière répétitive avec un compteur pour chaque itération.</p>
+<!-- //Montrer un exemple du @for -->
+
+					<div class="fragment">
+						<h3>@each</h3>
+						<p>Le “@each” compile des styles pour chaque valeur dans un tableau</p>
+<!-- //Montrer un exemple du @each -->
+					</div>
+
+					<div class="fragment">
+						<h3>@while</h3>
+						<p>Le “@while” compile des styles jusqu’a ce que l’évalution soit “false”</p>
+					</div>
+
+					<div class="fragment">
+						<h3>@mixin</h3>
+					</div>
+				</section>
+
+
+				<!-- **** Compass **** -->
+				<section>
+					<h2>Compass</h2>
+					<p>Compass est un framework pour SASS. Il contient une multitude de Mixins et d’outils pour nous aider à être plus rapide dans notre développement.</p>
+				</section>
+
+				<!-- **** Compass & CSS3 **** -->
+				<section>
+					<h2>CSS3</h2>
+					<p>Les mixins pour le CSS3 sont habituellement utilisé pour éviter d’avoir à écrire tous les préfixes des fureteurs. Ils sont utiles aussi pour fournir une solution alternative pour les plus vieux fureteurs.</p>
+					<p>Opacity, box-shadow, animations, font-face et plusieurs autres.</p>
+<!-- //Montrer quelques exemple -->
+				</section>
+
+				<!-- **** Compass & Helpers **** -->
+				<section>
+					<h2>Helpers</h2>
+					<p>Les helpers servent à améliorer les fonctions de SASS.</p>
+					<p>adjust-lightness, font-files, image-width, image-height, prefix, inline-image et plusieurs autres.</p>
+				</section>
+
+				<!-- **** Compass & Typography **** -->
+				<section>
+					<h2>Typography</h2>
+					<p>Mixins qui permettent de styler plus rapidement certains éléments typographiques.</p>
+					<p>Link effects, lists et textes</p>
+				</section>
+
+				<section>
+					<h2>Utilities</h2>
+					<p>Les utilities sont des mixins pour gagner du temps et aider à la maintenance du projet.</p>
+					<p>Sprites, clearfix, resets, browser support etc</p>
+<!-- //Montrer un exemple des sprites -->
+				</section>
+
+				<section>
+					<h2>Extensions</h2>
+					<ul>
+						<li>Susy</li>
+						<li>h5bp</li>
+						<li>rgba-png</li>
+						<li>...</li>
+					</ul>
+				</section>
+
+
+
+
+
+
+
+
+
+
 				<!-- **** @sprite **** -->
-				
-				<section>					
+				<section>
 					<h2>compass sprite</h2>
-					
+
 					<pre>
-						<code data-trim>							
+						<code data-trim>
 @import "../images/sprites-folder/*.png";
 @include all-sprites-folder-sprites(true);
 
