@@ -731,10 +731,10 @@ h3 {
 }
 
 .image {
-  background: url('../images/loop.svg?1380732841') top left no-repeat #1abc9c;
+  background: url('../images/loop.svg?1382395287') top left no-repeat #1abc9c;
 }
 .no-svg .image {
-  background: url('../images/loop.png?1380733939') top left no-repeat #1abc9c;
+  background: url('../images/loop.png?1382395287') top left no-repeat #1abc9c;
 }
 
 .primary {
@@ -778,7 +778,7 @@ h3 {
   display: block;
   height: 183px;
   width: 365px;
-  background: url('../images/bckg1.jpg?1381265098');
+  background: url('../images/bckg1.jpg?1382395287');
   z-index: -1;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
