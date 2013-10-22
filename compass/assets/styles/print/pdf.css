@@ -194,3 +194,5 @@ ul, ol, div, p {
 }
 
 .reveal h3 { font-size: 1em;}
+
+#remotes-widget { display: none; }
