@@ -203,7 +203,7 @@
 		margin : 0 29px 0 0;
 		float  : left;
 		
-		&:last-child { margin-right: 0; };
+		&.last { margin-right: 0; };
 	}
 }
 
