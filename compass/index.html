@@ -39,7 +39,7 @@
 				<!-- **** Intro preprocessor **** -->
 				<section>
 					<h2>Qu’est-ce qu’un préprocesseur CSS?</h2>
-					<p>C’est un outil permettant de transformer un langage (avec une syntaxe semblable à CSS), en CSS valide. La syntaxe du langage est souvent tellement proche de celle du CSS qu’on voit à peine la différence. Les préprocesseurs apportent une aide à l’écriture de vos feuilles de styles. Aujourd’hui, les deux préprocesseurs les plus utilisés sont Sass et Less.</p>
+					<p>C’est un outil permettant de transformer un langage (avec une syntaxe semblable à CSS), en CSS valide. La syntaxe du langage est souvent tellement proche de celle du CSS qu’on voit à peine la différence. Les préprocesseurs apportent une aide à l’écriture de vos feuilles de style. Aujourd’hui, les deux préprocesseurs les plus utilisés sont Sass et Less.</p>
 				</section>
 
 				<section>
@@ -134,24 +134,24 @@
 					
 					
 				</section>
-
+				
 				<!-- **** Nesting **** -->
 				<section>
-					<h2>Indentation</h2>
+					<h2>imbriquation</h2>
 					
 					<br>
 					
 					<div class="fragment">
-						<h3 class="primary">Indentation des selecteurs</h3>
-						<p>Les selecteurs CSS peuvent être indentés.</p>
+						<h3 class="primary">imbriquation des selecteurs</h3>
+						<p>Les selecteurs CSS peuvent être imbriqués.</p>
 					</div>
 					
 					<br>
 					<!-- //Montrer exemple de base sur le nesting -->
 
 					<div class="fragment">
-						<h3 class="primary">Indentation des propriétés</h3>
-						<p>Certaines propriétés avec le même nom peuvent être indentées</p>
+						<h3 class="primary">imbriquation des propriétés</h3>
+						<p>Certaines propriétés avec le même nom peuvent être imbriquées</p>
 					</div>
 					
 					<br>
@@ -169,11 +169,11 @@
 				</section>
 				
 				<section>
-					<h2>Indentation (suite)</h2>
+					<h2>imbriquation (suite)</h2>
 					
 					<br>
 					
-					<h3 class="primary">Indentation des sélecteurs</h3>
+					<h3 class="primary">imbriquation des sélecteurs</h3>
 					
 					<br>					
 					
@@ -192,11 +192,11 @@
 						</code>
 					</pre>
 					
-					<p>* Ne pas dépasser 3 niveaux d'indentation</p>
+					<p>* Ne pas dépasser 3 niveaux d'imbriquation</p>
 				</section>
 				
 				<section>
-					<h2>nesting (indentation)</h2>
+					<h2>nesting (imbriquation)</h2>
 					
 					<br>
 					
@@ -221,11 +221,11 @@
 				</section>
 				
 				<section>
-					<h2>Indentation (suite)</h2>
+					<h2>imbriquation (suite)</h2>
 					
 					<br>
 					
-					<h3 class="primary">indentation des propriétés</h3>
+					<h3 class="primary">imbriquation des propriétés</h3>
 					
 					
 					<pre>
@@ -260,7 +260,7 @@
 				</section>
 				
 				<section>
-					<h2>Indentation (suite)</h2>
+					<h2>imbriquation (suite)</h2>
 					
 					<br>
 					
@@ -278,6 +278,38 @@
 
 /* CSS GÉNÉRÉ */
 .touch .ma-class-parent .ma-class-enfant { color: black; }
+
+						</code>
+					</pre>
+					
+					<p>* .touch est une fonctionnalité de Modernizr</p>
+										
+				</section>
+				
+				<section>
+					<h2>imbriquation (suite)</h2>
+					
+					<br>
+					
+					<h3 class="primary">sélecteur :hover, :pseudo-element ( & )</h3>
+					
+					<pre>
+						<code data-trim>
+.ma-class-parent {
+	.ma-classe-enfant {
+		&:hover {
+			color: black;
+		}
+		
+		&:first-child {
+			color: red;
+		}
+	}
+}
+
+/* CSS GÉNÉRÉ */
+.touch .ma-class-parent .ma-class-enfant:hover { color: black; }
+.touch .ma-class-parent .ma-class-enfant:first-child { color: red; }
 
 						</code>
 					</pre>
@@ -317,6 +349,23 @@ $margin: 10px 20px;
 					</pre>
 					
 				</section>
+				
+				<section>
+					<h2>variables (suite)</h2>
+					
+					<pre>
+						<code data-trim>
+.ma-class {
+	$width: 10px;
+	
+	width: $width;	
+}			
+						</code>
+					</pre>
+					
+					<p>Une variable créée dans un sélecteur n'est pas globale, donc ne peut être utilisée <br/>pour d'autres sélecteurs.</p>
+					
+				</section>
 
 
 				<!-- **** Mixins **** -->
@@ -335,7 +384,7 @@ $margin: 10px 20px;
 					
 					<div class="fragment">
 						<h3 class="primary">Utilisation</h3>
-						<p>Nous utilisons “@include” pour inclure tous les styles retournés par la mixin. </p>
+						<p>Nous utilisons “@include” pour inclure tous les styles retournés par le mixin. </p>
 					</div>
 <!-- //Montrer un exemple de mixin de base -->
 
@@ -388,12 +437,9 @@ $margin: 10px 20px;
 				<!-- **** Mixins **** -->
 				<section>
 					<h2>@extend</h2>
-					<p>Nous voulons souvent utiliser les même styles mais avec une légère différence. La façon la plus fréquente est d’utiliser une classe plus spécifique.</p>
+					<p>Nous voulons souvent utiliser les mêmes styles mais avec une légère différence. La façon la plus fréquente est d’utiliser une classe plus spécifique.</p>
 					<p>Avec SASS, la maintenance est beaucoup plus facile et cela permet d’éviter certaines erreurs.</p>
 					<p>Nous utilisons “@extend .classe” pour réutiliser les styles d’un selecteur sans avoir à tout dupliquer.</p>
-<!-- //Montrer un exemple de base de @extend -->
-					<a href="http://krasimirtsonev.com/blog/article/SASS-mixins-extends-and-placeholders-differences-use-cases">Different use cases</a>
-
 				</section>
 				
 				<section>
@@ -525,7 +571,7 @@ $margin: 10px 20px;
 
 					<div class="fragment">
 						<h3 class="primary">@media</h3>
-						<p>L’utilisation du “@media” est la même qu’en CSS sauf à l’exception qu’elle peut être imbriqué dans les selecteurs.</p>
+						<p>L’utilisation du “@media” query est la même qu’en CSS sauf à l’exception qu’elle peut être imbriquée dans les sélecteurs.</p>
 <!-- //Montrer une utilisation du @media -->
 					</div>
 					
@@ -539,7 +585,7 @@ $margin: 10px 20px;
 
 					<div class="fragment">
 						<h3 class="primary">@if</h3>
-						<p>Permet d’utiliser des “@if, @else if, @else” dans toutes les directives.</p>
+						<p>Permet d’utiliser des “@if, @else if, @else” pour toutes les directives.</p>
 					</div>
 				</section>
 
@@ -604,11 +650,19 @@ $var: false;
 					<h3 class="primary">@for</h3>
 					<pre>
 						<code data-trim>
-@for $i from 0 through 6 {
+@for $i from 1 through 6 {
 	.for-#{$i} {
 		height : $i * 20#{px};
 	}
 }
+
+/* CSS GÉNÉRÉ */
+.for-1 { height: 20px; }
+.for-2 { height: 40px; }
+.for-3 { height: 60px; }
+.for-4 { height: 80px; }
+.for-5 { height: 100px; }
+.for-6 { height: 120px; }
 
 						</code>
 					</pre>
@@ -701,14 +755,14 @@ $var: false;
 				
 				<section>
 					<div class="author">
-						<p>Nicolas Poliquin</p>
+						<h5>Nicolas Poliquin</h5>
 						<p>Twitter: <a href="https://twitter.com/_polikin" target="_blank">@_polikin</a></p>
 						<p>Github: <a href="https://github.com/polikin" target="_blank">https://github.com/polikin</a></p>
 						<p>Courriel: <a href="mailto:nic@polikin.ca?subject=Question presentation Compass" target="_blank">nic@polikin.ca</a></p>
 					</div>
 					
 					<div class="author">
-						<p>Mathieu Rivest</p>
+						<h5>Mathieu Rivest</h5>
 						<p>LinkedIn: <a href="ca.linkedin.com/in/rivestmathieu/" target="_blank">ca.linkedin.com/in/rivestmathieu/</a></p>
 						<p>Github: <a href="https://github.com/polikin" target="_blank">https://github.com/MathRivest</a></p>
 						<p>Courriel: <a href="mailto:rivest.mathieu@gmail.com?subject=Question presentation Compass" target="_blank">rivest.mathieu@gmail.com</a></p>
@@ -746,7 +800,6 @@ $var: false;
 				history: true,
 				center: true,
 				width: 1400,
-				mouseWheel: true,
 				loop: true,
 				theme: Reveal.getQueryHash().theme, 
 				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
